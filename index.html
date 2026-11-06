@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChaseAgent — Your AI employee chases invoices, quotes & reviews · $5/mo</title>
+<meta name="description" content="ChaseAgent chases unpaid invoices, follows up forgotten quotes and requests Google reviews for your service business. Approve every message. $5/mo.">
+<style>
+  :root { --ink:#0f172a; --muted:#475569; --accent:#2563eb; --accent-dark:#1d4ed8; --bg:#f8fafc; --card:#ffffff; --line:#e2e8f0; --green:#16a34a; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+  header { padding:20px 0; display:flex; justify-content:space-between; align-items:center; }
+  .logo { font-weight:800; font-size:1.2rem; }
+  .logo span { color:var(--accent); }
+  .badge { background:#eff6ff; color:var(--accent-dark); font-size:.78rem; font-weight:600; padding:4px 10px; border-radius:999px; }
+  .hero { text-align:center; padding:56px 0 40px; }
+  .hero h1 { font-size:clamp(1.7rem,4.5vw,2.8rem); font-weight:800; letter-spacing:-.02em; }
+  .hero h1 em { font-style:normal; color:var(--accent); }
+  .hero p.sub { font-size:1.12rem; color:var(--muted); max-width:640px; margin:16px auto 28px; }
+  form.signup { display:flex; gap:10px; max-width:480px; margin:0 auto; }
+  form.signup input { flex:1; padding:14px 16px; border:1px solid var(--line); border-radius:10px; font-size:1rem; }
+  form.signup button { padding:14px 24px; background:var(--accent); color:#fff; border:0; border-radius:10px; font-size:1rem; font-weight:700; cursor:pointer; white-space:nowrap; }
+  form.signup button:hover { background:var(--accent-dark); }
+  .micro { font-size:.82rem; color:var(--muted); margin-top:10px; }
+  .proof { display:flex; gap:24px; justify-content:center; flex-wrap:wrap; margin-top:26px; font-size:.88rem; color:var(--muted); }
+  .proof b { color:var(--ink); }
+  section { padding:44px 0; }
+  h2 { font-size:1.6rem; text-align:center; margin-bottom:8px; letter-spacing:-.01em; }
+  h2 + .lead { text-align:center; color:var(--muted); max-width:620px; margin:0 auto 32px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .card .ico { font-size:1.5rem; margin-bottom:8px; }
+  .card h3 { font-size:1.02rem; margin-bottom:6px; }
+  .card p { font-size:.9rem; color:var(--muted); }
+  .steps { counter-reset:s; display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:18px; }
+  .step { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; position:relative; }
+  .step::before { counter-increment:s; content:counter(s); position:absolute; top:-14px; left:20px; background:var(--accent); color:#fff; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:.9rem; }
+  .step h3 { font-size:.98rem; margin:6px 0 4px; }
+  .step p { font-size:.87rem; color:var(--muted); }
+  .pricing { background:var(--card); border:2px solid var(--accent); border-radius:18px; padding:34px 26px; text-align:center; max-width:520px; margin:0 auto; }
+  .price { font-size:3rem; font-weight:800; }
+  .price small { font-size:1rem; font-weight:500; color:var(--muted); }
+  .pricing ul { list-style:none; margin:18px 0 22px; text-align:left; display:inline-block; }
+  .pricing li { padding:5px 0; font-size:.95rem; }
+  .pricing li::before { content:"✓ "; color:var(--green); font-weight:700; }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; padding:14px 34px; border-radius:10px; font-weight:700; text-decoration:none; }
+  .cta-btn:hover { background:var(--accent-dark); }
+  .faq { max-width:680px; margin:0 auto; }
+  .faq details { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 18px; margin-bottom:10px; }
+  .faq summary { font-weight:600; cursor:pointer; }
+  .faq p { font-size:.9rem; color:var(--muted); margin-top:8px; }
+  footer { text-align:center; padding:30px 0; font-size:.82rem; color:var(--muted); border-top:1px solid var(--line); }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo">Chase<span>Agent</span></div>
+    <div class="badge">Early access · Founding $5/mo</div>
+  </header>
+
+  <div class="hero">
+    <h1>Your AI employee chases <em>every invoice, quote &amp; review</em> — so you don't have to.</h1>
+    <p class="sub">Built for lawn care, handyman, cleaning &amp; plumbing businesses. The big tools charge <b>$99/mo</b> for follow-ups. ChaseAgent does it for <b>$5</b> — and you approve every single message before it sends.</p>
+
+    <!-- FORM: wire this to Google Forms or Formspree (free) before hosting -->
+    <form class="signup" action="#" method="post">
+      <input type="email" name="email" placeholder="you@yourbusiness.com" required>
+      <button type="submit">Get early access</button>
+    </form>
+    <p class="micro">No credit card. No spam. Leave anytime.</p>
+
+    <div class="proof">
+      <div><b>$84k+</b> average unpaid invoices carried by small businesses*</div>
+      <div><b>2 hrs/week</b> owners spend chasing payments*</div>
+      <div><b>$5/mo</b> instead of Jobber's $99 add-on</div>
+    </div>
+    <p class="micro">*verify these stats before launch — replace with sources you trust</p>
+  </div>
+
+  <section>
+    <h2>Money leaks every service business has</h2>
+    <p class="lead">You did the work. The money should already be in your account.</p>
+    <div class="cards">
+      <div class="card"><div class="ico">🧾</div><h3>Invoices nobody follows up</h3><p>Day 30 becomes day 90. Polite chasing feels awkward, so it doesn't happen — and cash flow suffers.</p></div>
+      <div class="card"><div class="ico">📩</div><h3>Quotes die in the inbox</h3><p>Customer said "we'll think about it." Nobody ever follows up. The job goes to whoever called back first.</p></div>
+      <div class="card"><div class="ico">⭐</div><h3>Happy customers, no reviews</h3><p>You never ask, so Google stays empty — and the next customer picks the 4.8★ competitor.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="lead">Set up in 5 minutes. No software to learn.</p>
+    <div class="steps">
+      <div class="step"><h3>Forward your invoices</h3><p>Auto-forward invoice emails to your private ChaseAgent address — or upload a CSV.</p></div>
+      <div class="step"><h3>Agent drafts the chase</h3><p>Right tone, right timing: polite at day 3, firm at day 14, final notice at day 30.</p></div>
+      <div class="step"><h3>You tap approve</h3><p>Nothing sends without your OK. Reply "YES" from your phone — done in 2 seconds.</p></div>
+      <div class="step"><h3>Money comes in</h3><p>Plus a weekly digest: what's overdue, what's at risk, what's owed to you.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Simple pricing</h2>
+    <div class="pricing">
+      <div class="price">$5<small>/month</small></div>
+      <ul>
+        <li>100 chase emails per month</li>
+        <li>Escalating follow-up sequences</li>
+        <li>Weekly money digest</li>
+        <li>You approve every message</li>
+        <li>Founding price locked for life</li>
+      </ul>
+      <a class="cta-btn" href="#top">Claim your spot</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Questions, answered</h2>
+    <div class="faq">
+      <details><summary>Will it email customers without me?</summary><p>Never. Every message waits for your one-tap approval. You can edit the text first if you want.</p></details>
+      <details><summary>Do I need QuickBooks or special software?</summary><p>No. Works with plain email from day one. QuickBooks sync arrives in v2.</p></details>
+      <details><summary>Is my data safe?</summary><p>Your inbox access is read-only for invoice detection. We never sell data, and everything can be deleted in one click.</p></details>
+      <details><summary>What if I go over 100 chases?</summary><p>You'll never be charged surprise fees — upgrade to unlimited at $12, or wait for next month.</p></details>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="logo" style="margin-bottom:6px">Chase<span style="color:var(--accent)">Agent</span></div>
+  Built by a solo founder · Every message approved by you · © 2026
+</footer>
+
+</body>
+</html>
