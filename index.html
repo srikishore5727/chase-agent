@@ -65,13 +65,36 @@
     <h1>Your AI employee chases <em>every invoice, quote &amp; review</em> — so you don't have to.</h1>
     <p class="sub">Built for lawn care, handyman, cleaning &amp; plumbing businesses. The big tools charge <b>$99/mo</b> for follow-ups. ChaseAgent does it for <b>$5</b> — and you approve every single message before it sends.</p>
 
-    <!-- FORM: Formspree (free tier, 50 submissions/mo) -->
-    <form class="signup" action="https://formspree.io/f/mrppdvjq" method="POST">
+    <!-- FORM: Formspree (free tier, 50 submissions/mo); JS intercepts submit to control redirect -->
+    <form class="signup" id="waitlist-form" action="https://formspree.io/f/mrppdvjq" method="POST">
       <input type="email" name="email" placeholder="you@yourbusiness.com" required>
       <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
-      <input type="hidden" name="_next" value="https://srikishore5727.github.io/chase-agent/thanks.html">
       <button type="submit">Get early access</button>
     </form>
+    <script>
+      document.getElementById('waitlist-form').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        var form = this;
+        var btn = form.querySelector('button');
+        var original = btn.textContent;
+        btn.disabled = true;
+        btn.textContent = 'Joining…';
+        try {
+          var res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+          });
+          if (res.ok) {
+            window.location.href = 'thanks.html';
+            return;
+          }
+        } catch (err) { /* fall through to native submit */ }
+        btn.disabled = false;
+        btn.textContent = original;
+        form.submit();
+      });
+    </script>
     <p class="micro">No credit card. No spam. Leave anytime.</p>
 
     <div class="proof">
