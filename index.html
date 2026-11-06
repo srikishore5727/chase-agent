@@ -5,143 +5,160 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChaseAgent — Your AI employee chases invoices, quotes & reviews · $5/mo</title>
 <meta name="description" content="ChaseAgent chases unpaid invoices, follows up forgotten quotes and requests Google reviews for your service business. Approve every message. $5/mo.">
+<meta property="og:title" content="ChaseAgent — Your AI employee chases every invoice, quote & review">
+<meta property="og:description" content="$5/mo agent that chases money for lawn care, handyman, cleaning & plumbing businesses. You approve every message.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://srikishore5727.github.io/chase-agent/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Instrument+Sans:wght@400..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy-950: #060b16;
-    --navy-900: #0a1120;
-    --navy-800: #101a2e;
-    --navy-700: #1a2740;
-    --ink: #e8eef8;
-    --muted: #93a4c0;
-    --muted-dim: #64748b;
-    --emerald: #34d399;
-    --emerald-deep: #10b981;
-    --cyan: #22d3ee;
-    --amber: #fbbf24;
-    --rose: #fb7185;
-    --card: rgba(255,255,255,.04);
-    --card-border: rgba(255,255,255,.08);
-    --grad: linear-gradient(135deg, #34d399, #22d3ee);
-    --radius: 16px;
-    --max: 1120px;
+    --navy-950:#05080f; --navy-900:#0a1120; --navy-800:#101a2e;
+    --ink:#e9eff9; --muted:#94a6c2; --dim:#64748b;
+    --emerald:#34d399; --emerald-2:#10b981; --cyan:#22d3ee;
+    --amber:#fbbf24; --rose:#fb7185;
+    --grad:linear-gradient(135deg,#34d399,#22d3ee);
+    --line:rgba(255,255,255,.08);
+    --card:rgba(255,255,255,.04);
+    --radius:20px;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 40px rgba(0,0,0,.28);
+    --font-head:'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-body:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    --font-hand:'Caveat',cursive;
+    --font-mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior:smooth; }
   body {
-    font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+    font-family:var(--font-body);
     background:var(--navy-950);
     color:var(--ink);
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap { max-width:var(--max); margin:0 auto; padding:0 24px; }
+  .wrap { max-width:1120px; margin:0 auto; padding:0 24px; }
+  section { position:relative; padding:76px 0; scroll-margin-top:96px; }
 
-  /* ---------- glow backdrop ---------- */
-  .glow {
-    position:absolute; border-radius:50%; filter:blur(120px);
-    pointer-events:none; z-index:0; opacity:.5;
-  }
-  .glow-a { width:600px; height:600px; top:-220px; left:50%; transform:translateX(-60%);
-    background:radial-gradient(circle,rgba(52,211,153,.28),transparent 70%); }
-  .glow-b { width:500px; height:500px; top:-140px; right:-160px;
-    background:radial-gradient(circle,rgba(34,211,238,.20),transparent 70%); }
-  .glow-c { width:420px; height:420px; top:420px; left:-180px;
-    background:radial-gradient(circle,rgba(129,140,248,.16),transparent 70%); }
+  h1,h2,h3 { font-family:var(--font-head); }
+  h1 { font-size:clamp(2.3rem,4.8vw,3.7rem); font-weight:700; letter-spacing:-.035em; line-height:1.05; }
+  h1 em { font-style:normal; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  h2 { font-size:clamp(1.7rem,3.2vw,2.5rem); font-weight:700; letter-spacing:-.03em; line-height:1.12; text-align:center; }
 
-  /* ---------- nav ---------- */
-  header.nav {
-    position:sticky; top:0; z-index:50;
-    backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
-    background:rgba(6,11,22,.72);
-    border-bottom:1px solid rgba(255,255,255,.06);
+  /* ================= floating pill nav (Humanto signature, our palette) ================= */
+  .nav-wrap { position:fixed; top:14px; left:0; right:0; z-index:50; padding:0 20px; }
+  .nav-pill {
+    max-width:1080px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:20px;
+    background:rgba(8,14,26,.78);
+    backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:999px;
+    padding:7px 7px 7px 22px;
+    box-shadow:0 12px 40px rgba(0,0,0,.4);
   }
-  .nav-inner { display:flex; align-items:center; justify-content:space-between; height:64px; }
-  .logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.15rem; letter-spacing:-.02em; text-decoration:none; color:var(--ink); }
-  .logo-mark {
-    width:30px; height:30px; border-radius:9px; background:var(--grad);
-    display:grid; place-items:center; color:#04121b; font-weight:900; font-size:.95rem;
-    box-shadow:0 0 24px rgba(52,211,153,.45);
-  }
-  .logo span { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .logo .logo-mark { -webkit-background-clip:border-box; background-clip:border-box; color:#04121b; }
-  .nav-cta {
-    background:var(--grad); color:#04121b; font-weight:700; font-size:.9rem;
-    padding:9px 18px; border-radius:10px; text-decoration:none;
+  .logo { display:flex; align-items:center; gap:9px; font-family:var(--font-head); font-weight:700; font-size:1.08rem; letter-spacing:-.02em; text-decoration:none; color:var(--ink); }
+  .logo-mark { width:28px; height:28px; border-radius:8px; background:var(--grad); display:grid; place-items:center; color:#04121b; font-size:.9rem; box-shadow:0 0 20px rgba(52,211,153,.45); }
+  .logo .word { background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .nav-links { display:flex; gap:26px; list-style:none; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500; transition:color .18s; }
+  .nav-links a:hover { color:var(--ink); }
+
+  /* ============ signature pill button: text + circular arrow badge ============ */
+  .btn-sig {
+    display:inline-flex; align-items:center; gap:12px;
+    background:var(--grad); color:#04121b;
+    font-family:var(--font-head); font-weight:700; font-size:.95rem;
+    border:0; border-radius:999px;
+    padding:6px 6px 6px 22px;
+    cursor:pointer; text-decoration:none; white-space:nowrap;
     transition:transform .18s, box-shadow .18s;
+    box-shadow:0 8px 24px rgba(52,211,153,.28);
   }
-  .nav-cta:hover { transform:translateY(-1px); box-shadow:0 8px 24px rgba(52,211,153,.35); }
+  .btn-sig:hover { transform:translateY(-2px); box-shadow:0 14px 36px rgba(52,211,153,.44); }
+  .btn-sig .circ {
+    width:34px; height:34px; border-radius:50%;
+    background:rgba(4,18,27,.16);
+    display:grid; place-items:center; font-size:1rem;
+    transition:transform .2s;
+  }
+  .btn-sig:hover .circ { transform:translateX(3px); }
+  .btn-sig.sm { font-size:.87rem; padding:5px 5px 5px 18px; }
+  .btn-sig.sm .circ { width:30px; height:30px; font-size:.9rem; }
 
-  /* ---------- hero ---------- */
-  .hero { position:relative; padding:88px 0 72px; overflow:hidden; }
-  .hero-grid {
-    position:relative; z-index:1;
-    display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;
+  /* ================= hero ================= */
+  .hero { position:relative; padding:150px 0 64px; overflow:hidden; }
+  .grid-bg {
+    position:absolute; inset:0; pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1.5px, transparent 1.5px),
+      linear-gradient(90deg, rgba(255,255,255,.035) 1.5px, transparent 1.5px);
+    background-size:74px 74px;
+    -webkit-mask-image:radial-gradient(ellipse 85% 75% at 50% 28%, #000 25%, transparent 78%);
+    mask-image:radial-gradient(ellipse 85% 75% at 50% 28%, #000 25%, transparent 78%);
   }
+  .glow { position:absolute; border-radius:50%; filter:blur(120px); pointer-events:none; opacity:.55; }
+  .glow-a { width:620px; height:620px; top:-240px; left:50%; transform:translateX(-62%); background:radial-gradient(circle,rgba(52,211,153,.30),transparent 70%); }
+  .glow-b { width:480px; height:480px; top:-120px; right:-180px; background:radial-gradient(circle,rgba(34,211,238,.20),transparent 70%); }
+  .glow-c { width:700px; height:300px; bottom:-160px; left:50%; transform:translateX(-50%); background:radial-gradient(ellipse,rgba(52,211,153,.14),transparent 70%); }
+
+  .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+
   .pill {
     display:inline-flex; align-items:center; gap:8px;
     background:rgba(52,211,153,.10); border:1px solid rgba(52,211,153,.30);
-    color:#6ee7b7; font-size:.8rem; font-weight:600; letter-spacing:.02em;
+    color:#6ee7b7; font-size:.8rem; font-weight:600;
     padding:6px 14px; border-radius:999px; margin-bottom:22px;
   }
   .pill .dot { width:7px; height:7px; border-radius:50%; background:var(--emerald); box-shadow:0 0 10px var(--emerald); animation:pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
 
-  h1 {
-    font-size:clamp(2.2rem,4.6vw,3.5rem);
-    font-weight:900; letter-spacing:-.035em; line-height:1.08;
-  }
-  h1 em { font-style:normal; background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
   .sub { font-size:1.1rem; color:var(--muted); margin:20px 0 30px; max-width:540px; }
   .sub b { color:var(--ink); font-weight:600; }
 
-  form.signup { display:flex; gap:10px; max-width:470px; }
+  form.signup { display:flex; gap:10px; max-width:480px; }
   form.signup input[type=email] {
-    flex:1; padding:14px 18px; font-size:1rem; font-family:inherit;
+    flex:1; padding:14px 22px; font-size:1rem; font-family:inherit;
     background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.14);
-    border-radius:12px; color:var(--ink); outline:none; transition:border .2s, box-shadow .2s;
+    border-radius:999px; color:var(--ink); outline:none;
+    transition:border .2s, box-shadow .2s;
   }
-  form.signup input[type=email]::placeholder { color:var(--muted-dim); }
+  form.signup input[type=email]::placeholder { color:var(--dim); }
   form.signup input[type=email]:focus { border-color:var(--emerald); box-shadow:0 0 0 4px rgba(52,211,153,.15); }
-  form.signup button {
-    padding:14px 26px; font-size:1rem; font-weight:700; font-family:inherit;
-    background:var(--grad); color:#04121b; border:0; border-radius:12px; cursor:pointer;
-    white-space:nowrap; transition:transform .18s, box-shadow .18s;
-  }
-  form.signup button:hover:not(:disabled) { transform:translateY(-2px); box-shadow:0 10px 30px rgba(52,211,153,.4); }
-  form.signup button:disabled { opacity:.7; cursor:wait; }
-  .micro { font-size:.82rem; color:var(--muted-dim); margin-top:12px; }
+  form.signup .btn-sig { font-size:1rem; padding:6px 6px 6px 24px; }
+  form.signup .btn-sig .circ { width:40px; height:40px; font-size:1.1rem; }
+  form.signup .btn-sig:disabled { opacity:.7; cursor:wait; transform:none; }
+  .micro { font-size:.82rem; color:var(--dim); margin-top:12px; }
 
   .hero-stats { display:flex; gap:28px; margin-top:34px; flex-wrap:wrap; }
   .stat { border-left:2px solid rgba(52,211,153,.5); padding-left:14px; }
-  .stat b { display:block; font-size:1.25rem; font-weight:800; letter-spacing:-.02em; }
+  .stat b { display:block; font-family:var(--font-head); font-size:1.3rem; font-weight:700; letter-spacing:-.02em; }
   .stat span { font-size:.8rem; color:var(--muted); }
 
-  /* ---------- product mockup ---------- */
+  /* ============ product mockup (the story: agent works, you approve) ============ */
+  .hero-visual { position:relative; }
   .mockup {
     position:relative; z-index:1;
     background:linear-gradient(160deg,#0f1a30,#0a1120);
     border:1px solid rgba(255,255,255,.10);
-    border-radius:20px; padding:22px;
-    box-shadow:0 40px 90px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.03) inset;
+    border-radius:22px; padding:22px;
+    box-shadow:0 40px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
     animation:float 6s ease-in-out infinite;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
   .mock-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:16px; }
-  .mock-title { font-size:.85rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; }
+  .mock-title { font-family:var(--font-head); font-size:.82rem; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
   .mock-badge { font-size:.72rem; font-weight:700; background:rgba(251,113,133,.15); color:#fda4af; padding:3px 10px; border-radius:999px; }
   .invoice {
     background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08);
-    border-radius:14px; padding:16px; margin-bottom:14px;
+    border-radius:16px; padding:16px; margin-bottom:14px;
   }
   .inv-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; }
-  .inv-name { font-weight:700; font-size:.95rem; }
-  .inv-amt { font-weight:800; font-size:1.15rem; color:var(--emerald); font-family:'JetBrains Mono',monospace; }
-  .inv-meta { font-size:.8rem; color:var(--muted-dim); }
+  .inv-name { font-family:var(--font-head); font-weight:700; font-size:.95rem; }
+  .inv-amt { font-family:var(--font-mono); font-weight:700; font-size:1.12rem; color:var(--emerald); }
+  .inv-meta { font-size:.8rem; color:var(--dim); }
   .overdue-tag { color:#fda4af; font-weight:600; }
   .timeline { list-style:none; margin-top:14px; }
   .timeline li { display:flex; gap:12px; padding:8px 0; font-size:.85rem; align-items:flex-start; }
@@ -150,74 +167,113 @@
   .tl-wait { background:rgba(251,191,36,.18); color:#fcd34d; animation:pulse 1.6s infinite; }
   .tl-sched { background:rgba(148,163,184,.18); color:#94a3b8; }
   .tl-body b { display:block; font-size:.87rem; font-weight:600; color:var(--ink); }
-  .tl-body span { color:var(--muted-dim); font-size:.78rem; }
+  .tl-body span { color:var(--dim); font-size:.78rem; }
   .approve-row { display:flex; gap:8px; margin-top:14px; }
-  .btn-approve { flex:1; background:var(--grad); color:#04121b; font-weight:700; font-size:.85rem; padding:10px; border:0; border-radius:10px; cursor:pointer; font-family:inherit; }
-  .btn-edit { flex:1; background:transparent; color:var(--muted); font-weight:600; font-size:.85rem; padding:10px; border:1px solid rgba(255,255,255,.14); border-radius:10px; cursor:pointer; font-family:inherit; }
-  .mock-foot { display:flex; justify-content:space-between; font-size:.78rem; color:var(--muted-dim); margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.07); }
+  .btn-approve {
+    flex:1; background:var(--grad); color:#04121b;
+    font-family:var(--font-head); font-weight:700; font-size:.85rem;
+    padding:11px; border:0; border-radius:999px; cursor:pointer; font-family:inherit;
+  }
+  .btn-edit {
+    flex:0 0 84px; background:transparent; color:var(--muted);
+    font-weight:600; font-size:.85rem; padding:11px;
+    border:1px solid rgba(255,255,255,.14); border-radius:999px; cursor:pointer; font-family:inherit;
+  }
+  .mock-foot { display:flex; justify-content:space-between; font-size:.78rem; color:var(--dim); margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.07); }
 
-  /* floating mini cards */
   .mini {
-    position:absolute; z-index:2; background:#0f1a30; border:1px solid rgba(255,255,255,.12);
-    border-radius:12px; padding:10px 14px; font-size:.8rem; font-weight:600;
+    position:absolute; z-index:2; background:#0f1a30;
+    border:1px solid rgba(255,255,255,.12); border-radius:999px;
+    padding:10px 16px; font-size:.8rem; font-weight:600;
     box-shadow:0 18px 40px rgba(0,0,0,.5); display:flex; align-items:center; gap:8px;
   }
-  .mini-a { top:46%; right:-26px; animation:float 5s ease-in-out infinite .8s; color:#6ee7b7; }
+  .mini-a { top:44%; right:-26px; animation:float 5s ease-in-out infinite .8s; color:#6ee7b7; }
   .mini-b { bottom:-16px; left:-14px; animation:float 5.5s ease-in-out infinite .4s; color:#fcd34d; }
-  @media (max-width:1200px) { .mini-a { right:0; } }
 
-  /* ---------- sections ---------- */
-  section { position:relative; padding:76px 0; }
+  /* handwritten annotation (Humanto's "It's free!" → our approval story) */
+  .annotation {
+    position:absolute; right:-104px; bottom:88px; z-index:3;
+    color:var(--amber); font-family:var(--font-hand); font-size:1.35rem;
+    line-height:1.1; text-align:center; transform:rotate(-6deg);
+    pointer-events:none; text-shadow:0 2px 12px rgba(0,0,0,.5);
+  }
+  .annotation svg { display:block; margin:4px auto 0; }
+
+  /* ================= chip marquee (trust/feature strip) ================= */
+  .marquee {
+    position:relative; z-index:2; overflow:hidden;
+    padding:20px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:rgba(255,255,255,.015);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+    mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  }
+  .mq-track { display:flex; gap:14px; width:max-content; animation:mq 36s linear infinite; }
+  .marquee:hover .mq-track { animation-play-state:paused; }
+  @keyframes mq { to { transform:translateX(-50%); } }
+  .chip {
+    display:inline-flex; align-items:center; gap:8px; white-space:nowrap;
+    border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.04);
+    border-radius:999px; padding:9px 18px;
+    font-size:.87rem; font-weight:500; color:var(--muted);
+  }
+  .chip svg { flex:0 0 auto; }
+
+  /* ================= sections ================= */
   .sec-tag {
-    display:block; text-align:center; font-size:.78rem; font-weight:700; letter-spacing:.14em;
+    display:block; text-align:center; font-family:var(--font-head);
+    font-size:.78rem; font-weight:700; letter-spacing:.16em;
     text-transform:uppercase; color:var(--emerald); margin-bottom:12px;
   }
-  h2 { font-size:clamp(1.6rem,3vw,2.3rem); font-weight:800; letter-spacing:-.03em; text-align:center; line-height:1.15; }
   .lead { text-align:center; color:var(--muted); max-width:620px; margin:14px auto 44px; font-size:1.05rem; }
 
-  /* problem cards */
   .cards-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
   .card {
-    background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius);
-    padding:26px; transition:transform .25s, border-color .25s, background .25s;
+    background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:36px 30px; box-shadow:var(--shadow);
+    transition:transform .25s, border-color .25s, box-shadow .25s;
   }
-  .card:hover { transform:translateY(-6px); border-color:rgba(52,211,153,.4); background:rgba(52,211,153,.04); }
+  .card:hover {
+    transform:translateY(-6px);
+    border-color:rgba(52,211,153,.4);
+    box-shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 50px rgba(0,0,0,.35), 0 0 40px rgba(52,211,153,.08);
+  }
   .card .ico {
-    width:44px; height:44px; border-radius:12px; display:grid; place-items:center;
-    background:rgba(52,211,153,.12); margin-bottom:16px;
+    width:46px; height:46px; border-radius:14px; display:grid; place-items:center;
+    background:rgba(52,211,153,.12); border:1px solid rgba(52,211,153,.25);
+    margin-bottom:18px;
   }
   .card h3 { font-size:1.05rem; font-weight:700; margin-bottom:8px; letter-spacing:-.01em; }
   .card p { font-size:.92rem; color:var(--muted); }
 
-  /* how it works */
   .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; counter-reset:s; }
   .step {
-    background:var(--card); border:1px solid var(--card-border); border-radius:var(--radius);
-    padding:24px 20px; position:relative; transition:transform .25s, border-color .25s;
+    background:linear-gradient(165deg,rgba(255,255,255,.055),rgba(255,255,255,.02));
+    border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px 24px; position:relative; box-shadow:var(--shadow);
+    transition:transform .25s, border-color .25s;
   }
   .step:hover { transform:translateY(-6px); border-color:rgba(34,211,238,.4); }
   .step::before {
     counter-increment:s; content:counter(s);
-    position:absolute; top:-15px; left:20px;
+    position:absolute; top:-15px; left:22px;
     width:30px; height:30px; border-radius:50%;
     background:var(--grad); color:#04121b;
-    display:grid; place-items:center; font-weight:800; font-size:.9rem;
+    display:grid; place-items:center;
+    font-family:var(--font-head); font-weight:700; font-size:.9rem;
     box-shadow:0 6px 18px rgba(52,211,153,.4);
   }
   .step h3 { font-size:.97rem; font-weight:700; margin:8px 0 6px; }
   .step p { font-size:.87rem; color:var(--muted); }
 
   /* comparison table */
-  .compare {
-    max-width:760px; margin:0 auto; background:var(--card);
-    border:1px solid var(--card-border); border-radius:var(--radius); overflow:hidden;
-  }
+  .compare { max-width:760px; margin:0 auto; background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.02)); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
   .compare table { width:100%; border-collapse:collapse; font-size:.93rem; }
   .compare th, .compare td { padding:15px 20px; text-align:left; }
-  .compare thead th { background:rgba(255,255,255,.04); font-size:.8rem; text-transform:uppercase; letter-spacing:.08em; color:var(--muted); }
+  .compare thead th { background:rgba(255,255,255,.04); font-family:var(--font-head); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); }
   .compare thead th.us { color:var(--emerald); }
   .compare tbody tr { border-top:1px solid rgba(255,255,255,.06); }
-  .compare td.us { background:rgba(52,211,153,.06); font-weight:700; color:#6ee7b7; }
+  .compare td.us { background:rgba(52,211,153,.07); font-weight:700; color:#6ee7b7; }
   .compare td.them { color:var(--muted); }
   .compare td:first-child { color:var(--ink); font-weight:500; }
 
@@ -225,7 +281,7 @@
   .price-wrap { max-width:480px; margin:0 auto; }
   .price-card {
     position:relative; background:linear-gradient(165deg,#0f1a30,#0a1120);
-    border:1px solid rgba(52,211,153,.45); border-radius:22px; padding:38px 32px;
+    border:1px solid rgba(52,211,153,.45); border-radius:24px; padding:38px 32px;
     text-align:center; overflow:hidden;
     box-shadow:0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(52,211,153,.12);
   }
@@ -235,39 +291,44 @@
     filter:blur(30px); pointer-events:none;
   }
   .price-badge {
-    position:relative; display:inline-block; font-size:.72rem; font-weight:800; letter-spacing:.1em;
-    text-transform:uppercase; color:#04121b; background:var(--grad);
-    padding:5px 14px; border-radius:999px; margin-bottom:18px;
+    position:relative; display:inline-block; font-family:var(--font-head);
+    font-size:.72rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase;
+    color:#04121b; background:var(--grad); padding:5px 14px; border-radius:999px; margin-bottom:18px;
   }
-  .price { position:relative; font-size:3.4rem; font-weight:900; letter-spacing:-.04em; line-height:1; }
+  .price { position:relative; font-family:var(--font-head); font-size:3.4rem; font-weight:700; letter-spacing:-.04em; line-height:1; }
   .price small { font-size:1rem; font-weight:500; color:var(--muted); letter-spacing:0; }
   .price-list { list-style:none; text-align:left; margin:24px 0 28px; position:relative; }
-  .price-list li { padding:8px 0; font-size:.95rem; display:flex; gap:10px; align-items:center; color:var(--muted); }
-  .price-list li::before { content:''; flex:0 0 18px; height:18px; border-radius:50%; background:rgba(52,211,153,.2); }
-  .price-list li { position:relative; }
+  .price-list li { position:relative; padding:8px 0 8px 30px; font-size:.95rem; color:var(--muted); }
+  .price-list li::before {
+    content:'✓'; position:absolute; left:0; top:8px;
+    width:20px; height:20px; border-radius:50%;
+    background:rgba(52,211,153,.18); color:var(--emerald);
+    font-size:.72rem; font-weight:900;
+    display:grid; place-items:center;
+  }
   .price-list li b { color:var(--ink); font-weight:600; }
-  .price-list li::after {
-    content:'✓'; position:absolute; left:3px; top:8px; font-size:.7rem; font-weight:900; color:var(--emerald);
-  }
   .cta-btn {
-    position:relative; display:inline-block; width:100%;
-    background:var(--grad); color:#04121b; font-weight:800; font-size:1.02rem;
-    padding:16px; border-radius:13px; text-decoration:none;
+    position:relative; display:flex; align-items:center; justify-content:center; gap:12px;
+    width:100%; background:var(--grad); color:#04121b;
+    font-family:var(--font-head); font-weight:700; font-size:1.02rem;
+    padding:16px; border-radius:999px; text-decoration:none;
     transition:transform .18s, box-shadow .18s;
+    box-shadow:0 10px 30px rgba(52,211,153,.3);
   }
-  .cta-btn:hover { transform:translateY(-2px); box-shadow:0 14px 40px rgba(52,211,153,.4); }
-  .price-note { position:relative; font-size:.82rem; color:var(--muted-dim); margin-top:14px; }
+  .cta-btn:hover { transform:translateY(-2px); box-shadow:0 16px 44px rgba(52,211,153,.45); }
+  .price-note { position:relative; font-size:.82rem; color:var(--dim); margin-top:14px; }
 
   /* faq */
   .faq { max-width:680px; margin:0 auto; }
   .faq details {
-    background:var(--card); border:1px solid var(--card-border); border-radius:13px;
-    padding:0; margin-bottom:12px; overflow:hidden; transition:border-color .2s;
+    background:linear-gradient(165deg,rgba(255,255,255,.05),rgba(255,255,255,.02));
+    border:1px solid var(--line); border-radius:14px;
+    margin-bottom:12px; overflow:hidden; transition:border-color .2s;
   }
   .faq details[open] { border-color:rgba(52,211,153,.35); }
   .faq summary {
-    padding:17px 22px; font-weight:600; cursor:pointer; list-style:none;
-    display:flex; justify-content:space-between; align-items:center; font-size:.97rem;
+    padding:17px 22px; font-family:var(--font-head); font-weight:600; cursor:pointer;
+    list-style:none; display:flex; justify-content:space-between; align-items:center; font-size:.97rem;
   }
   .faq summary::-webkit-details-marker { display:none; }
   .faq summary::after { content:'+'; font-size:1.3rem; color:var(--emerald); font-weight:400; transition:transform .2s; }
@@ -276,46 +337,51 @@
 
   /* final cta band */
   .cta-band {
-    position:relative; text-align:center; padding:70px 24px;
+    position:relative; text-align:center; padding:72px 24px;
     background:linear-gradient(150deg,#0f1a30,#0a1120);
-    border:1px solid rgba(255,255,255,.10); border-radius:24px; overflow:hidden;
+    border:1px solid rgba(255,255,255,.10); border-radius:28px; overflow:hidden;
+    box-shadow:var(--shadow);
   }
   .cta-band::before {
     content:''; position:absolute; inset:0;
-    background:radial-gradient(ellipse 60% 80% at 50% -20%,rgba(52,211,153,.20),transparent);
+    background:
+      radial-gradient(ellipse 60% 80% at 50% -20%,rgba(52,211,153,.22),transparent),
+      radial-gradient(ellipse 40% 60% at 80% 120%,rgba(34,211,238,.14),transparent);
     pointer-events:none;
   }
-  .cta-band h2 { position:relative; }
-  .cta-band p { position:relative; color:var(--muted); margin:12px auto 28px; max-width:520px; }
-  .cta-band form { position:relative; margin:0 auto; }
+  .cta-band h2, .cta-band p, .cta-band form { position:relative; }
+  .cta-band p { color:var(--muted); margin:12px auto 28px; max-width:520px; }
+  .cta-band form { margin:0 auto; }
 
-  footer {
-    border-top:1px solid rgba(255,255,255,.07); margin-top:76px;
-    padding:34px 0; text-align:center; font-size:.85rem; color:var(--muted-dim);
-  }
+  footer { border-top:1px solid var(--line); margin-top:76px; padding:34px 0; text-align:center; font-size:.85rem; color:var(--dim); }
   footer .logo { justify-content:center; margin-bottom:8px; display:inline-flex; }
 
   /* scroll reveal */
   .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
   .reveal.in { opacity:1; transform:none; }
 
-  /* ---------- responsive ---------- */
-  @media (max-width:900px) {
+  /* ================= responsive ================= */
+  @media (max-width:1280px) { .annotation { display:none; } }
+  @media (max-width:960px) {
+    .nav-links { display:none; }
+    .hero { padding-top:120px; }
     .hero-grid { grid-template-columns:1fr; gap:44px; }
-    .hero { padding-top:56px; }
     .cards-3 { grid-template-columns:1fr; }
     .steps { grid-template-columns:1fr 1fr; }
-    .mini-b { left:0; }
     form.signup { flex-direction:column; max-width:100%; }
+    form.signup .btn-sig { justify-content:center; }
     .hero-stats { gap:18px; }
+    .mini-a { right:0; }
   }
   @media (max-width:560px) {
     .steps { grid-template-columns:1fr; }
-    .compare th, .compare td { padding:12px 12px; font-size:.85rem; }
-    .mini { display:none; }
+    .compare th, .compare td { padding:12px 10px; font-size:.83rem; }
+    .mini, .annotation { display:none; }
+    .nav-pill { padding:6px 6px 6px 16px; }
+    .price { font-size:2.8rem; }
   }
   @media (prefers-reduced-motion:reduce) {
-    .mockup, .mini, .pill .dot, .tl-wait { animation:none !important; }
+    .mockup, .mini, .pill .dot, .tl-wait, .mq-track { animation:none !important; }
     .reveal { opacity:1; transform:none; transition:none; }
     html { scroll-behavior:auto; }
   }
@@ -323,18 +389,26 @@
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap nav-inner">
+<!-- ================= floating pill nav ================= -->
+<div class="nav-wrap">
+  <nav class="nav-pill" aria-label="Main">
     <a class="logo" href="#">
       <span class="logo-mark">⚡</span>
-      Chase<span>Agent</span>
+      Chase<span class="word">Agent</span>
     </a>
-    <a class="nav-cta" href="#waitlist">Get early access</a>
-  </div>
-</header>
+    <ul class="nav-links">
+      <li><a href="#how">How it works</a></li>
+      <li><a href="#math">The math</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a class="btn-sig sm" href="#waitlist">Get early access <span class="circ">→</span></a>
+  </nav>
+</div>
 
-<!-- ================= HERO ================= -->
+<!-- ================= hero ================= -->
 <div class="hero">
+  <div class="grid-bg"></div>
   <div class="glow glow-a"></div>
   <div class="glow glow-b"></div>
   <div class="glow glow-c"></div>
@@ -348,7 +422,7 @@
       <form class="signup" id="waitlist-form" action="https://formspree.io/f/mrppdvjq" method="POST">
         <input type="email" name="email" placeholder="you@yourbusiness.com" required>
         <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
-        <button type="submit">Get early access →</button>
+        <button class="btn-sig" type="submit" id="waitlist">Get early access <span class="circ">→</span></button>
       </form>
       <p class="micro">No credit card. No spam. Leave anytime.</p>
 
@@ -360,8 +434,8 @@
       <p class="micro">*verify these stats before launch — replace with sources you trust</p>
     </div>
 
-    <!-- product mockup -->
-    <div style="position:relative">
+    <!-- product mockup: the design tells the story (draft → approve → paid) -->
+    <div class="hero-visual">
       <div class="mini mini-a">✓ Paid within 4 days</div>
       <div class="mini mini-b">⏳ Quote follow-up due</div>
       <div class="mockup">
@@ -401,14 +475,47 @@
           <span style="color:#6ee7b7">2 sent today</span>
         </div>
       </div>
+
+      <!-- handwritten annotation: our version of Humanto's "It's free!" -->
+      <div class="annotation" aria-hidden="true">
+        you approve<br>every send!
+        <svg width="66" height="46" viewBox="0 0 66 46" fill="none">
+          <path d="M58 6C42 3 18 12 8 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M8 34L22 31M8 34L12 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- ================= PROBLEM ================= -->
-<section>
+<!-- ================= chip marquee ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <!-- set A -->
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Works with plain email — no special software</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> You approve every message</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> No credit card to join</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Founding $5/mo locked for life</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Day 3 → 14 → 30 follow-up sequences</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Weekly money digest, every Monday</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Cancel anytime — no contracts</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Set up in 5 minutes</span>
+    <!-- set B (duplicate for seamless loop) -->
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Works with plain email — no special software</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> You approve every message</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> No credit card to join</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Founding $5/mo locked for life</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Day 3 → 14 → 30 follow-up sequences</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Weekly money digest, every Monday</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Cancel anytime — no contracts</span>
+    <span class="chip"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg> Set up in 5 minutes</span>
+  </div>
+</div>
+
+<!-- ================= the leak (problem) ================= -->
+<section id="problem">
   <div class="wrap">
-    <span class="sec-tag reveal">The money leak</span>
+    <span class="sec-tag reveal">The leak</span>
     <h2 class="reveal">Money leaks out of every<br>service business</h2>
     <p class="lead reveal">You did the work. The money should already be in your account.</p>
     <div class="cards-3">
@@ -437,10 +544,10 @@
   </div>
 </section>
 
-<!-- ================= HOW IT WORKS ================= -->
-<section>
+<!-- ================= how it works ================= -->
+<section id="how">
   <div class="wrap">
-    <span class="sec-tag reveal">How it works</span>
+    <span class="sec-tag reveal">The chase</span>
     <h2 class="reveal">Set up in 5 minutes.<br>No software to learn.</h2>
     <p class="lead reveal">Four steps, then it runs on autopilot — with you in control.</p>
     <div class="steps">
@@ -464,8 +571,8 @@
   </div>
 </section>
 
-<!-- ================= COMPARISON ================= -->
-<section>
+<!-- ================= the math (comparison) ================= -->
+<section id="math">
   <div class="wrap">
     <span class="sec-tag reveal">The math</span>
     <h2 class="reveal">Same outcome. 95% cheaper.</h2>
@@ -511,10 +618,10 @@
   </div>
 </section>
 
-<!-- ================= PRICING ================= -->
-<section>
+<!-- ================= pricing ================= -->
+<section id="pricing">
   <div class="wrap">
-    <span class="sec-tag reveal">Pricing</span>
+    <span class="sec-tag reveal">The price</span>
     <h2 class="reveal">One plan. No surprises.</h2>
     <p class="lead reveal">The price you join at is the price you keep — forever.</p>
     <div class="price-wrap reveal">
@@ -528,19 +635,19 @@
           <li><b>You approve every message</b>&nbsp;— nothing auto-sends</li>
           <li><b>Cancel anytime</b>&nbsp;— no contracts</li>
         </ul>
-        <a class="cta-btn" href="#waitlist">Claim your spot →</a>
+        <a class="cta-btn" href="#waitlist">Claim your spot <span aria-hidden="true">→</span></a>
         <p class="price-note">Over 100 chases? Upgrade to unlimited at $12. Never charged surprise fees.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= FAQ ================= -->
-<section>
+<!-- ================= faq ================= -->
+<section id="faq">
   <div class="wrap">
-    <span class="sec-tag reveal">FAQ</span>
-    <h2 class="reveal">Questions, answered</h2>
-    <div class="faq reveal">
+    <span class="sec-tag reveal">Questions</span>
+    <h2 class="reveal">Answers, no fine print</h2>
+    <div class="faq reveal" style="margin-top:38px">
       <details>
         <summary>Will it email customers without me?</summary>
         <p>Never. Every message waits for your one-tap approval. You can edit the text first if you want.</p>
@@ -561,7 +668,7 @@
   </div>
 </section>
 
-<!-- ================= FINAL CTA ================= -->
+<!-- ================= final cta ================= -->
 <section style="padding-top:20px">
   <div class="wrap">
     <div class="cta-band reveal">
@@ -570,7 +677,7 @@
       <form class="signup" id="waitlist-form-2" action="https://formspree.io/f/mrppdvjq" method="POST">
         <input type="email" name="email" placeholder="you@yourbusiness.com" required>
         <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
-        <button type="submit">Get early access →</button>
+        <button class="btn-sig" type="submit">Get early access <span class="circ">→</span></button>
       </form>
     </div>
   </div>
@@ -578,22 +685,22 @@
 
 <footer>
   <div class="wrap">
-    <a class="logo" href="#"><span class="logo-mark">⚡</span> Chase<span>Agent</span></a>
+    <a class="logo" href="#"><span class="logo-mark">⚡</span> Chase<span class="word">Agent</span></a>
     <p>Built by a solo founder · Every message approved by you · © 2026</p>
   </div>
 </footer>
 
 <script>
-  // --- form submit via fetch → custom redirect (Formspree free ignores _next) ---
+  // form submit via fetch → custom redirect (Formspree free ignores _next)
   function wireForm(id) {
     var form = document.getElementById(id);
     if (!form) return;
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
       var btn = form.querySelector('button');
-      var original = btn.textContent;
+      var original = btn.innerHTML;
       btn.disabled = true;
-      btn.textContent = 'Joining…';
+      btn.innerHTML = 'Joining…';
       try {
         var res = await fetch(form.action, {
           method: 'POST',
@@ -603,14 +710,14 @@
         if (res.ok) { window.location.href = 'thanks.html'; return; }
       } catch (err) { /* fall through */ }
       btn.disabled = false;
-      btn.textContent = original;
+      btn.innerHTML = original;
       form.submit();
     });
   }
   wireForm('waitlist-form');
   wireForm('waitlist-form-2');
 
-  // --- scroll reveal ---
+  // scroll reveal
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
