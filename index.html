@@ -144,7 +144,16 @@
     padding:5px 5px 5px 24px;
     text-decoration:none; display:inline-flex;
     box-shadow:0 8px 26px rgba(52,211,153,.25);
+    position:relative; overflow:hidden;
   }
+  /* premium light-sweep sheen on hover */
+  .btn::after {
+    content:""; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(110deg, transparent 32%, rgba(255,255,255,.45) 50%, transparent 68%);
+    transform:translateX(-160%);
+    transition:transform .7s var(--ease);
+  }
+  .btn:hover::after { transform:translateX(160%); }
   .btn:hover { filter:brightness(1.15); transform:translateY(-1px); }
   .btn:disabled { opacity:.75; cursor:wait; transform:none; }
   .btn-badge {
@@ -400,31 +409,127 @@
   .chip svg { flex:none; }
 
   /* ============================================================
-     Cards — Humanto card recipe: radius 20px, padding 40/32/32,
-     shadow-card. Slight dark-mode adaptation (hairline border).
+     Cards — Humanto path-card recipe: centered content +
+     inner "art panel" with gradient floor wash and floating
+     elements. Dark-mode adaptation of their white cards.
      ============================================================ */
   .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
   .card {
-    background:var(--surface);
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:var(--radius-card);
-    padding:40px 32px 32px;
+    background:linear-gradient(180deg, #101a2e 0%, #0d1526 100%);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:24px;
+    padding:40px 28px 28px;
     box-shadow:var(--shadow-card);
+    text-align:center;
+    display:flex; flex-direction:column;
     transition:transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+    position:relative; overflow:hidden;
+  }
+  .card::before {
+    content:""; position:absolute; top:0; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.14), transparent);
+    pointer-events:none;
   }
   .card:hover {
-    transform:translateY(-5px);
-    border-color:rgba(52,211,153,.35);
-    box-shadow:0 1px 2px rgba(0,0,0,.4), 0 22px 50px rgba(0,0,0,.35), 0 0 40px rgba(52,211,153,.07);
+    transform:translateY(-6px);
+    border-color:rgba(52,211,153,.4);
+    box-shadow:0 1px 2px rgba(0,0,0,.4), 0 26px 56px rgba(0,0,0,.4), 0 0 44px rgba(52,211,153,.09);
   }
-  .card .ico {
-    width:46px; height:46px; border-radius:13px;
+  .card h3 {
+    font-size:clamp(1.3rem,1.15rem+.6vw,1.6rem); font-weight:600;
+    letter-spacing:-.025em; line-height:1.2; margin-bottom:10px;
+  }
+  .card > p {
+    font-size:15px; color:var(--ink-70); letter-spacing:-.01em;
+    line-height:1.55; max-width:34ch; margin:0 auto 22px;
+  }
+  .card .card-btn { margin:0 auto 26px; }
+
+  /* --- art panel: gradient floor + floating elements --- */
+  .card-art {
+    position:relative; margin-top:auto;
+    background:linear-gradient(180deg, rgba(255,255,255,.03) 0%, rgba(52,211,153,.07) 55%, rgba(34,211,238,.16) 100%);
+    border:1px solid rgba(255,255,255,.07);
+    border-radius:18px;
+    min-height:250px;
+    overflow:hidden;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  }
+  .card-art::after {
+    content:""; position:absolute; left:0; right:0; bottom:0; height:46%;
+    background:radial-gradient(ellipse 90% 100% at 50% 100%, rgba(52,211,153,.28), transparent 75%);
+    pointer-events:none;
+  }
+
+  /* floating "pain chips" with dismiss badges (Humanto chaos pattern) */
+  .fchip {
+    position:absolute; z-index:2;
+    display:inline-flex; align-items:center; gap:7px;
+    background:#f6f8fb; color:#0d1526;
+    font-size:13.5px; font-weight:600; letter-spacing:-.01em;
+    padding:9px 30px 9px 15px; border-radius:999px;
+    box-shadow:0 10px 24px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.3);
+    white-space:nowrap;
+    transform:rotate(var(--r,0deg));
+    animation:chipFloat 5s ease-in-out infinite;
+    animation-delay:var(--d,0s);
+  }
+  .fchip .x {
+    position:absolute; top:-9px; right:-9px;
+    width:22px; height:22px; border-radius:50%;
+    background:#fb7185; color:#fff;
     display:grid; place-items:center;
-    background:var(--tint); border:1px solid rgba(52,211,153,.25);
-    margin-bottom:18px;
+    font-size:12px; font-weight:700; line-height:1;
+    box-shadow:0 4px 10px rgba(251,113,133,.45);
   }
-  .card h3 { font-size:1.125rem; font-weight:600; letter-spacing:-.02em; margin-bottom:8px; }
-  .card p { font-size:15px; color:var(--ink-70); letter-spacing:-.01em; line-height:1.55; }
+  .fchip.ok { background:#0f2f2a; color:#6ee7b7; box-shadow:0 10px 24px rgba(0,0,0,.4); }
+  .fchip.ok .x { background:var(--accent); box-shadow:0 4px 10px rgba(52,211,153,.45); }
+  @keyframes chipFloat {
+    0%,100% { transform:rotate(var(--r,0deg)) translateY(0); }
+    50% { transform:rotate(var(--r,0deg)) translateY(-7px); }
+  }
+
+  /* mini step list inside art panel (Humanto path-2 pattern) */
+  .art-steps {
+    position:absolute; z-index:2; inset:22px 18px auto;
+    display:grid; gap:10px;
+  }
+  .art-step {
+    display:flex; align-items:flex-start; gap:11px; text-align:left;
+    background:rgba(13,21,38,.82);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:13px; padding:11px 14px;
+    box-shadow:0 8px 22px rgba(0,0,0,.35);
+  }
+  .art-step .n {
+    flex:none; width:22px; height:22px; border-radius:50%;
+    background:linear-gradient(135deg,#34d399,#22d3ee); color:#04121b;
+    display:grid; place-items:center; font-size:12px; font-weight:700;
+    margin-top:1px;
+  }
+  .art-step b { display:block; font-size:13.5px; font-weight:600; letter-spacing:-.01em; color:var(--ink); }
+  .art-step span { display:block; font-size:12.5px; color:var(--ink-55); letter-spacing:-.01em; line-height:1.4; }
+
+  /* review-stars mock inside art panel */
+  .art-review {
+    position:absolute; z-index:2; inset:26px 20px auto;
+    background:rgba(13,21,38,.85);
+    -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:14px; padding:16px; text-align:left;
+    box-shadow:0 10px 26px rgba(0,0,0,.4);
+  }
+  .art-review .stars { color:var(--star); font-size:15px; letter-spacing:2px; }
+  .art-review p { font-size:13px; color:var(--ink-70); margin-top:7px; letter-spacing:-.01em; line-height:1.45; }
+  .art-review .who { display:flex; align-items:center; gap:9px; margin-top:12px; }
+  .art-review .av {
+    width:28px; height:28px; border-radius:50%; flex:none;
+    background:linear-gradient(135deg,#34d399,#22d3ee);
+    display:grid; place-items:center; color:#04121b; font-size:12px; font-weight:700;
+  }
+  .art-review .who b { font-size:13px; font-weight:600; letter-spacing:-.01em; }
+  .art-review .who span { font-size:12px; color:var(--ink-55); display:block; }
 
   /* ============================================================
      Steps — card recipe with numbered badges
@@ -498,6 +603,13 @@
     background:radial-gradient(ellipse, rgba(52,211,153,.28), transparent 70%);
     filter:blur(40px);
   }
+  /* low-poly line-art watermark behind pricing (matches CTA band) */
+  .offer-art {
+    position:absolute; z-index:-1; pointer-events:none;
+    width:120%; max-width:none; height:auto;
+    left:50%; top:54%; transform:translate(-50%,-50%);
+    opacity:.4;
+  }
   .offer .h2 { max-width:736px; }
   .offer-lead { color:rgba(255,255,255,.7); text-wrap:pretty; max-width:592px; margin-top:16px; font-size:1.05rem; }
   .price {
@@ -562,25 +674,51 @@
   .faq-list.hx-acc .faq-item.hx-open .hx-faq-a-in { visibility:visible; transition:visibility; }
 
   /* ============================================================
-     CTA band — Humanto .cta-band recipe (exact geometry):
-     radius 40px, layered washes, border, clamp padding.
+     CTA band — Humanto .cta-band recipe + their audit-band
+     checklist pattern: layered washes, radius 40px, low-poly
+     line-art watermark, check-circle benefit list.
      ============================================================ */
   .cta-band-wrap { padding-block:clamp(32px,4vw,64px) 0; }
   .cta-band {
     isolation:isolate; text-align:center;
     padding:clamp(56px,6vw,88px) var(--gutter) clamp(72px,6vw,80px);
     background:
-      linear-gradient(rgba(52,211,153,0) 70.6%, rgba(52,211,153,.28) 100%),
-      linear-gradient(rgba(34,211,238,0) 0%, rgba(34,211,238,.1) 100%),
-      var(--surface);
-    border:1px solid rgba(255,255,255,.09);
+      linear-gradient(rgba(52,211,153,0) 66%, rgba(52,211,153,.22) 100%),
+      linear-gradient(rgba(34,211,238,0) 0%, rgba(34,211,238,.09) 100%),
+      linear-gradient(165deg, #101d33, #0a1120);
+    border:1px solid rgba(255,255,255,.1);
     border-radius:40px;
     justify-items:center; gap:20px; display:grid;
     position:relative; overflow:hidden;
+    box-shadow:0 30px 70px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.06);
   }
   .cta-band .h2 { max-width:660px; }
   .cta-band .lead { max-width:560px; color:var(--ink-70); }
   .cta-band form { margin-top:20px; }
+
+  /* low-poly line-art watermark (Humanto origami-animal pattern) */
+  .cta-art {
+    position:absolute; z-index:-1; pointer-events:none;
+    width:130%; max-width:none; height:auto;
+    left:50%; top:50%; transform:translate(-50%,-46%);
+    opacity:.5;
+  }
+
+  /* benefit checklist (Humanto audit-band pattern) */
+  .cta-list { display:grid; gap:13px; justify-items:center; margin-top:4px; }
+  .cta-list li {
+    list-style:none; display:flex; align-items:center; gap:12px;
+    font-size:15.5px; font-weight:500; letter-spacing:-.01em;
+    color:var(--ink-80); text-align:left;
+  }
+  .cta-list .tick {
+    flex:none; width:24px; height:24px; border-radius:50%;
+    background:linear-gradient(135deg,#34d399,#22d3ee);
+    display:grid; place-items:center; color:#04121b;
+    box-shadow:0 4px 12px rgba(52,211,153,.35);
+  }
+  .cta-list .tick svg { width:13px; height:13px; }
+  .cta-band .fine { font-size:13.5px; color:var(--ink-55); letter-spacing:-.01em; margin-top:2px; }
 
   footer {
     border-top:1px solid rgba(255,255,255,.06);
@@ -781,25 +919,50 @@
     </div>
     <div class="grid-3">
       <div class="card reveal">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
-        </div>
         <h3>Invoices nobody follows up</h3>
         <p>Day 30 becomes day 90. Polite chasing feels awkward, so it doesn't happen — and cash flow suffers.</p>
+        <div class="card-art">
+          <span class="fchip" style="--r:-7deg; top:22px; left:20px; --d:0s">Invoice #1042 · $1,240 <span class="x">✕</span></span>
+          <span class="fchip" style="--r:5deg; top:92px; right:16px; --d:1.2s">14 days overdue <span class="x">✕</span></span>
+          <span class="fchip" style="--r:-4deg; top:152px; left:30px; --d:2.1s">Day 90 · still nothing <span class="x">✕</span></span>
+          <span class="fchip ok" style="--r:6deg; bottom:18px; right:20px; --d:.6s">Paid in 4 days ✓ <span class="x">✓</span></span>
+        </div>
       </div>
       <div class="card reveal">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
         <h3>Quotes die in the inbox</h3>
         <p>Customer said "we'll think about it." Nobody ever follows up. The job goes to whoever called back first.</p>
+        <div class="card-art">
+          <div class="art-steps">
+            <div class="art-step">
+              <span class="n">1</span>
+              <span><b>Quote sent Tuesday</b><span>$2,100 job · never opened again</span></span>
+            </div>
+            <div class="art-step">
+              <span class="n">2</span>
+              <span><b>The follow-up that never happened</b><span>Day 3 → 14 → 30 · silence</span></span>
+            </div>
+            <div class="art-step">
+              <span class="n">3</span>
+              <span><b>Competitor called first</b><span>Job lost · $2,100 gone</span></span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="card reveal">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-        </div>
         <h3>Happy customers, no reviews</h3>
         <p>You never ask, so Google stays empty — and the next customer picks the 4.8-star competitor.</p>
+        <div class="card-art">
+          <div class="art-review">
+            <div class="stars">★★★★★</div>
+            <p>"Best service we've used all year — already telling my neighbors."</p>
+            <div class="who">
+              <span class="av">M</span>
+              <span><b>Maria G.</b><span>never asked for a review</span></span>
+            </div>
+          </div>
+          <span class="fchip" style="--r:-5deg; bottom:16px; left:18px; --d:.9s">0 new reviews <span class="x">✕</span></span>
+          <span class="fchip" style="--r:5deg; bottom:16px; right:16px; --d:1.8s">Rival: 4.8★ <span class="x">✕</span></span>
+        </div>
       </div>
     </div>
   </div>
@@ -887,6 +1050,16 @@
 <div class="offer-wrap" id="pricing">
   <div class="container">
     <div class="offer reveal">
+      <!-- line-art watermark: lightning-bolt origami (brand motif) -->
+      <svg class="offer-art" viewBox="0 0 1440 520" fill="none" aria-hidden="true">
+        <g stroke="rgba(52,211,153,.16)" stroke-width="1.4" stroke-linejoin="round">
+          <path d="M760 40 L560 260 L700 260 L640 480 L880 220 L740 220 Z"/>
+          <path d="M760 40 L740 220 M560 260 L880 220 M700 260 L640 480"/>
+          <path d="M180 120 L300 200 L220 320 L100 260 Z" opacity=".6"/>
+          <path d="M1240 320 L1360 240 L1400 380 L1280 440 Z" opacity=".6"/>
+          <path d="M300 200 L560 260 M1240 320 L880 220" stroke-dasharray="6 10" opacity=".45"/>
+        </g>
+      </svg>
       <span class="price-badge">Founding price · locked for life</span>
       <h2 class="h2">One plan. No surprises.</h2>
       <p class="offer-lead">The price you join at is the price you keep — forever.</p>
@@ -956,12 +1129,40 @@
   </div>
 </section>
 
-<!-- ============ final cta band (Humanto .cta-band recipe) ============ -->
+<!-- ============ final cta band (Humanto audit-band recipe) ============ -->
 <div class="cta-band-wrap">
   <div class="container">
     <div class="cta-band reveal">
+      <!-- low-poly line-art watermark: paper planes chasing (our version of their origami animals) -->
+      <svg class="cta-art" viewBox="0 0 1440 560" fill="none" aria-hidden="true">
+        <g stroke="rgba(233,239,249,.14)" stroke-width="1.4" stroke-linejoin="round">
+          <!-- big plane, right -->
+          <path d="M1130 90 L1350 170 L1200 230 Z"/>
+          <path d="M1200 230 L1350 170 L1290 300 Z"/>
+          <path d="M1200 230 L1290 300 L1150 320 Z"/>
+          <path d="M1130 90 L1200 230"/>
+          <!-- mid plane, left -->
+          <path d="M110 150 L330 100 L240 230 Z"/>
+          <path d="M240 230 L330 100 L360 250 Z"/>
+          <path d="M240 230 L360 250 L250 320 Z"/>
+          <path d="M110 150 L240 230"/>
+          <!-- small plane, bottom center -->
+          <path d="M620 470 L790 420 L720 540 Z"/>
+          <path d="M720 540 L790 420 L840 520 Z"/>
+          <path d="M620 470 L720 540"/>
+          <!-- faint flight paths -->
+          <path d="M40 430 C 300 340, 520 380, 700 300" stroke-dasharray="6 10" opacity=".5"/>
+          <path d="M1400 420 C 1150 380, 980 440, 860 400" stroke-dasharray="6 10" opacity=".5"/>
+        </g>
+      </svg>
+
       <h2 class="h2">Stop chasing. Start collecting.</h2>
       <p class="lead">Join the early access list — founding $5/mo, locked for life. No credit card today.</p>
+      <ul class="cta-list">
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Overdue invoices chased on day 3, 14 &amp; 30</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> Every message approved by you before it sends</li>
+        <li><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span> $5/mo founding price locked for life</li>
+      </ul>
       <form class="signup" id="waitlist-form-2" action="https://formspree.io/f/mrppdvjq" method="POST">
         <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email address" required>
         <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
@@ -969,6 +1170,7 @@
           <span class="btn-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </button>
       </form>
+      <p class="fine">It's free. Early members get founding pricing first.</p>
     </div>
   </div>
 </div>
@@ -1028,6 +1230,19 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // premium 3D tilt on cards (disabled on touch / reduced-motion)
+  if (window.matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches) {
+    document.querySelectorAll('.card').forEach(function (card) {
+      card.addEventListener('pointermove', function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - 0.5;
+        var y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = 'translateY(-6px) perspective(900px) rotateX(' + (-y * 5).toFixed(2) + 'deg) rotateY(' + (x * 6).toFixed(2) + 'deg)';
+      });
+      card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+    });
+  }
 </script>
 
 </body>
