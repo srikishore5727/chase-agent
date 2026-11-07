@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512">
+  <defs>
+    <linearGradient id="sheen" x1="10" y1="-2" x2="48" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="32" y1="1" x2="32" y2="63" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff" stop-opacity=".38"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".2"/>
+    </linearGradient>
+    <filter id="lift" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="1.6" stdDeviation="2" flood-color="#022418" flood-opacity=".28"/>
+    </filter>
+  </defs>
+
+  <!-- vivid emerald badge -->
+  <rect width="64" height="64" rx="15" fill="#34d399"/>
+  <rect width="64" height="64" rx="15" fill="url(#sheen)"/>
+
+  <!-- chase chevrons: leading + smaller trailing = the follow-up in motion -->
+  <g transform="rotate(-45 32 32) translate(2.5 0)" filter="url(#lift)">
+    <path d="M13.5 23 22.5 32 13.5 41" fill="none" stroke="#050d1a" stroke-width="6.5" stroke-linecap="butt" stroke-linejoin="miter"/>
+    <path d="M30 20 42 32 30 44" fill="none" stroke="#050d1a" stroke-width="9" stroke-linecap="butt" stroke-linejoin="miter"/>
+  </g>
+
+  <!-- edge light -->
+  <rect x=".75" y=".75" width="62.5" height="62.5" rx="14.35" fill="none" stroke="url(#rim)" stroke-width="1.5"/>
+</svg>
