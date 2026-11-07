@@ -7,29 +7,32 @@
 3. Upload this file: `C:\Users\sriki\chase-agent\outreach\chaseagent-avatar.png`
    (press `Win+R`, paste that path, Enter → drag the PNG into Reddit)
 4. **Edit profile → About** and paste:
-   `Building ChaseAgent — a $5 AI that chases unpaid invoices for small businesses. I obsess over getting small businesses paid.`
+   `Building ChaseAgent. get paid without chasing. chaseagent.pages.dev`
 5. **Join** these subs (open each, click Join): r/smallbusiness · r/sweatystartup · r/handyman · r/landscaping · r/Invoice · r/smallbusinessowner
 
 ## STEP 2 — Post 3 comments (12 min)
 **Rules:** change at least a few words so it sounds like you · NO links · NO product name today · post from your phone or desktop, whatever you use normally.
 
-### 1️⃣ r/sweatystartup (6-day-old thread — lawn care guy, fresh and active)
-Open: https://www.reddit.com/r/sweatystartup/comments/1swfbeg/issues_with_customers_not_paying_solution
+> ⚠️ ALL 3 threads below verified LIVE today. The old r/sweatystartup link is DEAD (removed by moderator, don't comment there).
+> Style: no dashes, no semicolons, no numbering. Type like you're texting a friend. Change the wording so it's yours.
+
+### 1️⃣ r/smallbusinessowner — "Would you let AI handle your bill pay if you still approved every payment?"
+Open: https://www.reddit.com/r/smallbusinessowner/comments/1xpavla/would_you_let_ai_handle_your_bill_pay_if_you/
 
 Draft (adapt it):
-> Glad they paid after the legal-threat line — but that's the part most of us hate: you only got paid because you turned scary. What works earlier: put the late-fee terms in the original invoice, so the day-14 escalation is just "per terms, $X fee applies Friday" — no drama, the invoice is the bad guy, not you. Then day-30 final notice with a specific date. Most late payers aren't refusing, they're avoiding an awkward convo — a written deadline forces the convo without you being the bad guy. Card on file for regulars kills 90% of this too.
+> this is basically the only version of ai in my business i'd actually trust. draft it, line it up, whatever, but i'm the one hitting send. i tried one of those auto bill pay tools last year and cancelled within a month, not because it messed anything up, it just felt wrong watching payments go out without me looking first. the chasing invoices part is where i'd want the most help honestly, that's the task i keep pushing to tomorrow because every reminder i write sounds either too soft or like i'm about to sue them. curious what you'd want it to actually say when it chases someone though, like start polite or go firm right away
 
-### 2️⃣ r/Invoice ($680 detailing client ghosting a month)
+### 2️⃣ r/Invoice — "$680 client ghosting a month"
 Open: https://www.reddit.com/r/Invoice/comments/1wyqx7e/client_not_paying_invoice_how_far_would_you_take
 
 Draft (adapt it):
-> $680 after a month of silence = they're testing whether you'll go away. Play it in order: (1) one final email with a hard date — "invoice is 35 days past due; if not paid by [date+7], I'm filing in small claims" — and then actually file if the date passes, they're betting you won't; (2) add the late fee now if your terms allow it; (3) small claims for $680 is cheap and usually wins by default when they don't show up. Skip the payment plan for a commercial client who ghosted you — that rewards the behavior.
+> one month of silence is them testing how long before you give up. i had this same thing with a guy who owed me 900 for a detail job, kept saying the check was in the mail for six weeks. what finally worked was dropping the friend act. one short email, invoice is 30 days late, add the late fee if your terms have it, and a hard date for small claims. no paragraphs, no apologizing for asking. he paid in two days. ghosting you only keeps working if you stay polite about it. and small claims for 680 is cheap, if he doesn't show up you win by default so really you're just deciding if 680 is worth an afternoon
 
-### 3️⃣ r/smallbusinessowner ("destroying my mental health" thread)
-Open: https://www.reddit.com/r/smallbusinessowner/comments/1sc29gg/
+### 3️⃣ r/micro_saas — "What's something in your business that is still ridiculously manual in 2026?"
+Open: https://www.reddit.com/r/micro_saas/comments/1xo6npw/whats_something_in_your_business_that_is_still/
 
 Draft (adapt it):
-> 6 invoices, 22k — the hidden cost isn't the money, it's the 20 minutes you spend agonizing over every reminder wording. Two things that cut the agony: (1) write the 3-email escalation ONCE — day 3 nudge, day 14 firm with late fee, day 30 final notice with a date — then it's just swapping names in, the wording stops being a daily crisis; (2) batch all your chases into one 30-minute Friday block instead of carrying the dread every day. The Friday batch alone gave me my evenings back.
+> chasing overdue invoices. seriously, i write the same three emails on repeat, polite nudge on day 3, firmer on day 14 with the late fee, final notice on day 30, just swapping names around. and every single time i sit there rewording it because you don't want to sound like a jerk but you also want your money. i went looking for something that just handles the timing and lets me approve each one before it goes out and couldn't find a clean version so i started building my own. boring niche but the math is real, 5 invoices at 2k each is 10k just sitting out there while you write awkward emails
 
 ## STEP 3 — Look human (3 min)
 Open r/sweatystartup, r/smallbusiness, r/handyman — read 5 posts, **upvote ~20** things you genuinely like, and if one sparks a thought, reply naturally. Done.

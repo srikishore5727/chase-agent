@@ -104,11 +104,11 @@ function draftFor(post, subRule) {
   const t = (post.title + ' ' + post.content).toLowerCase();
   let body;
   if (/jobber|housecall|quickbooks/.test(t)) {
-    body = `Solid question. Quick take from someone who's looked at this space closely:\n\n1) [give ONE genuinely useful, specific tip — e.g. a late-fee line that actually works]\n2) [second tip]\n3) [third tip]\n\nThe pattern that matters most: [insight]. Happy to go deeper on any of these.`;
+    body = `Solid question. Quick take from someone who's looked at this space closely:\n\n1) [give ONE genuinely useful, specific tip, e.g. a late-fee line that actually works]\n2) [second tip]\n3) [third tip]\n\nThe pattern that matters most: [insight]. Happy to go deeper on any of these.`;
   } else if (/ghost|won'?t pay|not paying|unpaid/.test(t)) {
-    body = `The awkwardness is the whole problem — most late payers aren't refusing, they're avoiding the conversation.\n\nWhat works: [tip 1: escalation timing], [tip 2: wording that keeps the relationship], [tip 3: when to stop being nice].\n\n[ONE concrete example or exact line they can copy-paste today]`;
+    body = `The awkwardness is the whole problem. Most late payers aren't refusing, they're avoiding the conversation.\n\nWhat works: [tip 1: escalation timing], [tip 2: wording that keeps the relationship], [tip 3: when to stop being nice].\n\n[ONE concrete example or exact line they can copy-paste today]`;
   } else {
-    body = `[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]`;
+    body = `[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]`;
   }
   return `${body}\n\n---\nRULE REMINDER (r/${post.sub}): ${subRule}\n90/10: this comment must be worth reading even with the product line deleted.`;
 }

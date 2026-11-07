@@ -16,9 +16,9 @@ Reddit **bans automated posting** and moderators kill 53% of everything (68% of 
 
 ### A. "Steal my 3 chase emails" — value-first comment asset 🔥
 In any late-payment thread, give away the **exact escalation script inline** (no link):
-- **Day 3 (polite)**: "Hey [Name] — just a nudge on invoice #142, $850, due the 3rd. Anything blocking it? Happy to resend the link."
-- **Day 14 (firm)**: "Hi [Name] — invoice #142 is now 11 days past due. I've held the next scheduled visit; can you confirm a payment date this week?"
-- **Day 30 (final)**: "Hi [Name] — invoice #142 is 30 days past due with $[late fee] accruing per our terms. If payment or a plan isn't received by [date], this goes to collections/lien per our agreement."
+- **Day 3 (polite)**: "Hey [Name], just a nudge on invoice #142, $850, due the 3rd. Anything blocking it? Happy to resend the link."
+- **Day 14 (firm)**: "Hi [Name], invoice #142 is now 11 days past due. I've held the next scheduled visit. Can you confirm a payment date this week?"
+- **Day 30 (final)**: "Hi [Name], invoice #142 is 30 days past due with $[late fee] accruing per our terms. If payment or a plan isn't received by [date], this goes to collections/lien per our agreement."
 People screenshot scripts. Screenshots travel. The product is "this script, on autopilot" — mention it in ONE line, only where allowed.
 
 ### B. Build-in-public with self-deprecating numbers 📈 (best-performing format right now)
@@ -39,7 +39,7 @@ Payment Ping, NeatInvoice, DunningOS, Jinna are posting THIS WEEK in r/SideProje
 
 ### F. Weekly promote threads (the only sanctioned ads)
 r/smallbusiness **Promote-your-business weekly thread**, r/Entrepreneur **Thank You Thursday** (needs 10 karma), r/startups monthly Share Your Startup. Sharp one-liner + link:
-> "ChaseAgent — the $5 AI that sends your day 3/14/30 invoice follow-ups. You approve every message. Jobber charges $99 for less. → chaseagent.pages.dev"
+> "ChaseAgent, the $5 AI that sends your day 3/14/30 invoice follow-ups. You approve every message. Jobber charges $99 for less. chaseagent.pages.dev"
 
 ## 2. Subreddit matrix (verified Nov 2026)
 

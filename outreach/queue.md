@@ -9,7 +9,7 @@
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hey everyone!</p> <p>I'm building Project Genesis, a small digital tools studio, and ScopeGuard is our first product.</p> <p>It's an Excel-based workbook designed to help freelancers manage scope creep, endless revisions, and unpaid extra work.</p> <p>It helps track:</p> <p>- Project s…
 
 **Draft (personalize!):**
-The awkwardness is the whole problem — most late payers aren't refusing, they're avoiding the conversation.
+The awkwardness is the whole problem. Most late payers aren't refusing, they're avoiding the conversation.
 
 What works: [tip 1: escalation timing], [tip 2: wording that keeps the relationship], [tip 3: when to stop being nice].
 
@@ -24,7 +24,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <table> <tr><td> <a href="https://www.reddit.com/r/SideProject/comments/1xnujum/i_built_an_ai_back_office_for_small_businesses/"> <img src="https://external-preview.redd.it/u-K1EhM4CBYpUo7AcbzBzzOi2Laiy1fp50JYCu3cDag.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=56c3c39567e0ebd48e07e219fb47a85e29792430" alt="I buil…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; disclose you built it.
@@ -35,7 +35,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hey everyone, I'm planning a home physiotherapy service in Sydney. One process I'm working through is what happens when a clinician runs late and the remaining visits need to change.</p> <p>In our proposed setup, the organisation paying for a visit might need an update, while the perso…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sidebar before any link.
@@ -46,7 +46,7 @@ RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sid
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I spend way too much time just checking transactions, tracking who paid us and making sure bills aren't overdue. None of it is hard, it just never ends. I'd be fine with ai doing the boring part. flagging anything weird, lining up payments, chasing invoices. as long as nothing moves wi…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sidebar before any link.
@@ -57,7 +57,7 @@ RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sid
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I've been looking into different B2B lead generation tools lately, and one thing that keeps bothering me is how most of them lead with the size of their database. Millions of contacts sounds great, but what matters to me is how many are actually relevant to what I'm selling.</p> <p>I'd…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Jun 2026). Relevant replies ok; promo ONLY in weekly Promote thread.
@@ -68,7 +68,7 @@ RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Ju
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Deciding to start your own business can be intimidating, here are some pointers to help you based on my experience.</p> <p><strong>Dollar limits per state.</strong> Many states have strict project cost caps (labor + materials) for unlicensed handymen. Know your own states rules!</p> <p…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/handyman): Advice sub. Be a peer first, no marketing.
@@ -79,7 +79,7 @@ RULE REMINDER (r/handyman): Advice sub. Be a peer first, no marketing.
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hey all I've recently started a new business in IT support for home and business users, this client was my first bit of business, for context his desktop was 11 years old and the motherboard was fried, I sent suggestions of 4 machines, he purchased one I did not suggest and was adamant…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusinessuk): UK small business. Advice replies ok; rules strict on self-promo — check sidebar.
@@ -90,7 +90,7 @@ RULE REMINDER (r/smallbusinessuk): UK small business. Advice replies ok; rules s
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hey everyone!<br/> I’m 22 years old and I’m planning to start my own tech-based business/agency in Sri Lanka, offering services such as:<br/> Website design and development<br/> Business process and workflow automation<br/> Custom system and software development<br/> Business managemen…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Jun 2026). Relevant replies ok; promo ONLY in weekly Promote thread.
@@ -103,7 +103,7 @@ RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Ju
 **Draft (personalize!):**
 Solid question. Quick take from someone who's looked at this space closely:
 
-1) [give ONE genuinely useful, specific tip — e.g. a late-fee line that actually works]
+1) [give ONE genuinely useful, specific tip, e.g. a late-fee line that actually works]
 2) [second tip]
 3) [third tip]
 
@@ -118,7 +118,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>We're two people running a small web and AI studio in Germany. From July, small businesses got a free clickable preview of their new website from us. If they liked it, they set the price themselves with a slider, starting at €5. Below €500 they had to take our €90 a month care plan for…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Jun 2026). Relevant replies ok; promo ONLY in weekly Promote thread.
@@ -129,7 +129,7 @@ RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Ju
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I own a DTC ecommerce brand that's doing pretty well. I'm mostly hands-off these days and have a manager who handles the day-to-day operations, including order processing, inventory, fulfillment coordination, and making sure everything runs smoothly.</p> <p>He's paid well above what I'…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Jun 2026). Relevant replies ok; promo ONLY in weekly Promote thread.
@@ -140,7 +140,7 @@ RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Ju
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I genuinely think selling website redesigns is one of the most lucrative opportunities in the web design industry today.</p> <p>There are a few reasons why.</p> <p>First, AI has made building websites significantly faster and cheaper. What used to take weeks can now be done in a fracti…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sidebar before any link.
@@ -151,7 +151,7 @@ RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sid
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I find it crazy how many businesses still rely on spreadsheets, endless emails, WhatsApp messages, and people manually keeping track of everything.</p> <p>I'm curious — if you run a business or work in operations, what's one task you wish you could completely get rid of?</p> <p>Somethi…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/micro_saas): Journey/numbers posts ALLOWED. Honest breakdowns outperform pitches.
@@ -164,7 +164,7 @@ RULE REMINDER (r/micro_saas): Journey/numbers posts ALLOWED. Honest breakdowns o
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I spent six months working unpaid at an early-stage real estate startup founded by a fellow UMass Amherst alum. I joined while on OPT after a couple of interview rounds. The company was building an AI/CRM product, and I came on as a data engineering intern.</p> <p>About two months in, …
 
 **Draft (personalize!):**
-The awkwardness is the whole problem — most late payers aren't refusing, they're avoiding the conversation.
+The awkwardness is the whole problem. Most late payers aren't refusing, they're avoiding the conversation.
 
 What works: [tip 1: escalation timing], [tip 2: wording that keeps the relationship], [tip 3: when to stop being nice].
 
@@ -179,7 +179,7 @@ RULE REMINDER (r/smallbusiness): Q&A only. NO product mentions (removed since Ju
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I've been a freelance IT consultant for about 12 years and billing has always been my weak spot, so I built a Notion workspace to handle it. I've now turned it into a template called Crew of One OS.</p> <p>There's a time log with a start/stop timer, and hours roll up per project. On Fr…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; disclose you built it.
@@ -192,7 +192,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 **Draft (personalize!):**
 Solid question. Quick take from someone who's looked at this space closely:
 
-1) [give ONE genuinely useful, specific tip — e.g. a late-fee line that actually works]
+1) [give ONE genuinely useful, specific tip, e.g. a late-fee line that actually works]
 2) [second tip]
 3) [third tip]
 
@@ -207,7 +207,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hi everyone,</p> <p>As someone who has dealt with late invoice payments, writing follow-up emails to clients always felt awkward. You want to be polite, but you also need to get paid.</p> <p>To solve this, I built <strong>PaidFast</strong> — a simple, completely free micro-app that gen…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; disclose you built it.
@@ -218,7 +218,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>I’m a developer researching how event planners manage their work, especially weddings, birthdays and private events.</p> <p>From what I’ve seen, a lot of planners juggle WhatsApp chats, notebooks and spreadsheets for budgets, vendor contacts, client payments, guest lists and the day-of…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sidebar before any link.
@@ -229,7 +229,7 @@ RULE REMINDER (r/smallbusinessowner): Owner-run sub. Value replies ok. Check sid
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Freelancer here. For a long time my "systems" looked like this: client details buried in email threads, project deadlines in a notes app, invoices in a random folder, and a general sense of dread whenever someone asked "so how's business going?"</p> <p>I looked at the usual tools, but …
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; disclose you built it.
@@ -240,7 +240,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hi everyone! We're the team behind Talkia (<a href="https://talkia.co">https://talkia.co</a>). The idea started from a simple annoyance: small teams lose hours every week chasing overdue invoices, scheduling appointments and replying to the same questions.</p> <p>So we built "AI employ…
 
 **Draft (personalize!):**
-[Answer their actual question first, with specifics. THEN — only if the sub allows relevant mentions and it fits naturally — one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
+[Answer their actual question first, with specifics. THEN, only if the sub allows relevant mentions and it fits naturally, one line like: "I'm building ChaseAgent around exactly this problem (day3/14/30 chase emails with one-tap approve), happy to share what I've learned either way."]
 
 ---
 RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; disclose you built it.
@@ -251,7 +251,7 @@ RULE REMINDER (r/SideProject): Launch/feedback posts ALLOWED. Substance > ads; d
 - Excerpt: <!-- SC_OFF --><div class="md"><p>Hi guys,</p> <p>I’m here to vent mainly! </p> <p>I am a 2x founder I’ve built two profitable companies in the soft and hard tech industry in the last 12 years.</p> <p>My first company was a hard tech company in Europe where we’ve built an amazing 17 headed team, factory and brought a l…
 
 **Draft (personalize!):**
-The awkwardness is the whole problem — most late payers aren't refusing, they're avoiding the conversation.
+The awkwardness is the whole problem. Most late payers aren't refusing, they're avoiding the conversation.
 
 What works: [tip 1: escalation timing], [tip 2: wording that keeps the relationship], [tip 3: when to stop being nice].
 

@@ -4,7 +4,7 @@
 ## 🔥 Fresh / high-value
 1. **r/sweatystartup — "Issues with customers not paying solution?"** (6d, lawn care, OP actively asking, edited "they paid after I threatened legal action")
    https://www.reddit.com/r/sweatystartup/comments/1swfbeg/issues_with_customers_not_paying_solution
-   Draft: give the 3-step escalation that avoids needing legal threats — day3 nudge w/ payment link, day14 firm + late-fee line, day30 final notice. One line: "I'm building the $5 tool that automates exactly this — ChaseAgent." (sub allows story-style replies; keep pitch to one line)
+   Draft: give the 3-step escalation that avoids needing legal threats. day3 nudge with payment link, day14 firm plus late-fee line, day30 final notice. One line: "I'm building the $5 tool that automates exactly this, ChaseAgent." (sub allows story-style replies; keep pitch to one line)
 
 2. **r/SideProject — "I built a tool that nags your clients about overdue invoices…" (Payment Ping)** — competitor, posted TODAY, thread open for co-founder comments
    https://www.reddit.com/r/SideProject/comments/1xdqihq/i_built_a_tool_that_nags_your_clients_about/
@@ -32,4 +32,4 @@
 
 ## 📋 Ready-to-use assets (from PLAYBOOK)
 - **Campaign A scripts**: day3 / day14 / day30 wording in PLAYBOOK §1A — paste inline, no link
-- **Weekly promote thread** (r/smallbusiness): "ChaseAgent — the $5 AI that sends your day 3/14/30 invoice follow-ups, you approve every message. Jobber charges $99 for less → https://chaseagent.pages.dev"
+- **Weekly promote thread** (r/smallbusiness): "ChaseAgent, the $5 AI that sends your day 3/14/30 invoice follow-ups, you approve every message. Jobber charges $99 for less. https://chaseagent.pages.dev"
