@@ -299,102 +299,104 @@
   .stat b { display:block; font-size:1.35rem; font-weight:600; letter-spacing:-.02em; line-height:1.2; }
   .stat span { font-size:13px; color:var(--ink-70); letter-spacing:-.01em; }
 
-  /* --- product story: auto-playing overdue → draft → approve → paid --- */
-  .hero-visual { position:relative; margin-top:clamp(44px,6vw,72px); width:min(100%,600px); }
+  /* --- product story: tabbed walkthrough · tabs → split panel --- */
+  .hero-visual { position:relative; margin-top:clamp(44px,6vw,72px); width:min(100%,640px); }
   .mockup {
     position:relative; z-index:1;
     background:linear-gradient(165deg, #101c33, #0b1424);
     border:1px solid rgba(255,255,255,.1);
     border-radius:var(--radius-card);
-    padding:24px; text-align:left;
+    padding:18px; text-align:left;
     box-shadow:0 40px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.05);
     animation:float 6s ease-in-out infinite;
   }
   @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  .mock-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; gap:12px; }
+  .mock-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:12px; }
   .mock-title { font-size:12px; font-weight:600; color:var(--ink-55); letter-spacing:.08em; text-transform:uppercase; }
-  .mock-badge {
-    font-family:var(--font-mono);
-    font-size:12px; font-weight:600; letter-spacing:-.01em;
-    background:rgba(148,163,184,.16); color:#cbd5e1;
-    padding:4px 12px; border-radius:999px; flex:none;
+  .mock-hint { font-size:11.5px; color:var(--ink-55); letter-spacing:-.01em; white-space:nowrap; }
+
+  /* step tabs — icon + title + subtitle (reference tab-strip pattern) */
+  .htabs { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:8px; margin-bottom:14px; }
+  .htab {
+    display:flex; align-items:flex-start; gap:9px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:13px; padding:11px 10px;
+    font-family:inherit; text-align:left; cursor:pointer;
+    transition:border-color .25s var(--ease), background .25s var(--ease);
   }
+  .htab:hover { border-color:rgba(255,255,255,.22); }
+  .htab:focus-visible { outline:2px solid var(--accent-2); outline-offset:2px; }
+  .ht-ico { flex:none; width:17px; height:17px; margin-top:1px; color:var(--ink-55); transition:color .25s var(--ease); }
+  .ht-ico svg { width:100%; height:100%; display:block; }
+  .ht-txt { min-width:0; }
+  .ht-t { display:block; font-size:13px; font-weight:600; letter-spacing:-.02em; color:var(--ink-80); }
+  .ht-s { display:block; font-size:11.5px; line-height:1.35; letter-spacing:-.01em; color:var(--ink-55); margin-top:2px; }
+  .htab.is-on { background:rgba(52,211,153,.07); border-color:rgba(52,211,153,.45); }
+  .htab.is-on .ht-ico { color:var(--accent-2); }
+  .htab.is-on .ht-t { color:var(--ink); }
+  .htab.is-on .ht-s { color:#9adfc4; }
 
   /* scenes stack in one grid cell → crossfade with zero layout jump */
   .story { display:grid; }
   .scene {
     grid-area:1/1; opacity:0; visibility:hidden;
-    transform:translateY(10px);
-    transition:opacity .5s var(--ease), transform .5s var(--ease), visibility 0s .5s;
+    transform:translateY(8px);
+    transition:opacity .45s var(--ease), transform .45s var(--ease), visibility 0s .45s;
+    display:grid; grid-template-columns:1.06fr 1fr;
+    min-height:246px;
+    background:rgba(255,255,255,.02);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px; overflow:hidden;
   }
   .scene.is-on { opacity:1; visibility:visible; transform:none; transition-delay:0s; }
-  .scene-eyebrow {
-    display:flex; align-items:center; gap:8px; margin-bottom:12px;
-    font-size:12px; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
-    color:var(--ink-55);
-  }
-  .scene-eyebrow i {
-    font-style:normal; flex:none;
-    width:19px; height:19px; border-radius:50%;
-    display:grid; place-items:center;
-    font-size:11px; font-weight:700; letter-spacing:0;
-    background:rgba(52,211,153,.16); color:#6ee7b7;
-  }
-  .scene-note { font-size:13.5px; line-height:1.5; color:var(--ink-70); letter-spacing:-.01em; margin-top:12px; }
-  .scene-note b { color:var(--ink); font-weight:600; }
-  .seq {
-    display:flex; align-items:center; flex-wrap:wrap; gap:6px;
-    margin-top:12px; padding-top:12px;
-    border-top:1px dashed rgba(255,255,255,.1);
-    font-size:12.5px; color:var(--ink-55); letter-spacing:-.01em;
-  }
-  .seq i { font-style:normal; font-weight:700; color:#6ee7b7; }
 
-  /* scene 1 — money is stuck */
-  .invoice {
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:16px; padding:18px;
+  /* left — schematic panel: label · one-liner · flow boxes */
+  .hp-viz {
+    display:flex; flex-direction:column;
+    padding:20px 18px 18px;
+    background:rgba(255,255,255,.035);
+    border-right:1px solid rgba(255,255,255,.08);
   }
-  .inv-top { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4px; gap:12px; }
-  .inv-name { font-weight:600; font-size:1rem; letter-spacing:-.02em; }
-  .inv-amt { font-family:var(--font-mono); font-weight:500; font-size:1.1rem; color:var(--accent-2); }
-  .inv-meta { font-size:13px; color:var(--ink-55); letter-spacing:-.01em; }
-  .overdue-tag { color:#fda4af; font-weight:600; }
+  .hp-label { font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-55); }
+  .hp-line { font-size:13px; line-height:1.45; color:var(--ink-70); letter-spacing:-.01em; margin-top:7px; }
+  .flow { display:flex; align-items:stretch; gap:6px; margin-top:auto; padding-top:16px; }
+  .fbox {
+    flex:1 1 0; min-width:0;
+    display:flex; flex-direction:column; justify-content:center; gap:2px;
+    border:1px dashed rgba(255,255,255,.22);
+    border-radius:10px; padding:9px 6px;
+    background:rgba(255,255,255,.03);
+    text-align:center; font-size:11px; line-height:1.3;
+    color:var(--ink-55); letter-spacing:-.01em;
+  }
+  .fbox b { font-size:11.5px; font-weight:600; color:var(--ink-70); letter-spacing:-.01em; }
+  .fbox-on { border-style:solid; border-color:rgba(52,211,153,.5); background:rgba(52,211,153,.08); }
+  .fbox-on b { color:#6ee7b7; }
+  .farr { align-self:center; flex:none; color:var(--ink-55); font-size:12px; }
 
-  /* scene 2 — the agent drafts in your voice */
-  .draft {
-    background:rgba(34,211,238,.06);
-    border:1px solid rgba(34,211,238,.24);
-    border-radius:16px; padding:16px 18px;
-  }
-  .draft-head { display:flex; align-items:center; gap:8px; margin-bottom:8px; font-size:12px; font-weight:600; color:#67e8f9; letter-spacing:-.01em; }
-  .draft-dot { flex:none; width:7px; height:7px; border-radius:50%; background:#22d3ee; box-shadow:0 0 0 4px rgba(34,211,238,.16); }
-  .draft p { font-size:14px; line-height:1.55; color:var(--ink-70); letter-spacing:-.01em; }
+  /* right — eyebrow · headline · copy */
+  .hp-copy { padding:24px; display:flex; flex-direction:column; justify-content:center; }
+  .hp-eyebrow { font-size:11px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--accent-2); margin-bottom:12px; }
+  .hp-copy h3 { font-size:clamp(1.3rem,1.05rem + 1vw,1.7rem); font-weight:600; letter-spacing:-.03em; line-height:1.17; }
+  .hp-copy p { font-size:14px; line-height:1.6; color:var(--ink-70); letter-spacing:-.01em; margin-top:12px; text-wrap:pretty; }
+  .hp-copy p b { color:var(--ink); font-weight:600; }
 
-  /* scene 3 — one-tap approval */
-  .approve-card {
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:16px; padding:16px 18px;
-  }
-  .approve-msg { margin-bottom:12px; }
-  .approve-msg b { display:block; font-size:14px; font-weight:600; letter-spacing:-.01em; }
-  .approve-msg span { font-size:13px; color:var(--ink-55); letter-spacing:-.01em; }
-  .approve-row { display:flex; gap:10px; }
+  /* scene 3 — the tap */
+  .approve-row { display:flex; gap:8px; margin-top:14px; }
   .btn-approve {
     position:relative; flex:1;
     background:linear-gradient(135deg,#34d399,#22d3ee); color:#04121b;
-    font-family:inherit; font-weight:700; font-size:14px; letter-spacing:-.02em;
-    padding:13px; border:0; border-radius:999px; cursor:pointer;
+    font-family:inherit; font-weight:700; font-size:13px; letter-spacing:-.02em;
+    padding:10px; border:0; border-radius:999px; cursor:pointer;
   }
   .btn-approve .lbl-b { position:absolute; inset:0; display:grid; place-items:center; opacity:0; }
   .btn-edit {
-    flex:0 0 86px; background:transparent; color:var(--ink-70);
-    font-family:inherit; font-weight:600; font-size:14px; padding:13px;
+    flex:0 0 72px; background:transparent; color:var(--ink-70);
+    font-family:inherit; font-weight:600; font-size:13px; padding:10px;
     border:1px solid rgba(255,255,255,.14); border-radius:999px; cursor:pointer;
   }
-  /* the tap: press → ripple → label flips to "Sent ✓" (JS adds .sent 1.3s in) */
+  /* press → ripple → label flips to "Sent ✓" (JS adds .sent 1.3s in) */
   .scene.sent .btn-approve { animation:press .3s ease; }
   .scene.sent .btn-approve::after {
     content:''; position:absolute; inset:0; border-radius:999px;
@@ -407,43 +409,6 @@
   @keyframes lblOut { to { opacity:0; transform:translateY(-6px); } }
   @keyframes lblIn { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
 
-  /* scene 4 — paid */
-  .paid {
-    display:flex; align-items:center; gap:14px;
-    background:rgba(52,211,153,.07);
-    border:1px solid rgba(52,211,153,.28);
-    border-radius:16px; padding:16px 18px;
-  }
-  .paid-check {
-    flex:none; width:38px; height:38px; border-radius:50%;
-    background:linear-gradient(135deg,#34d399,#22d3ee); color:#04121b;
-    display:grid; place-items:center;
-  }
-  .paid-check svg { width:18px; height:18px; }
-  .paid-body { flex:1; min-width:0; }
-  .paid-body b { display:block; font-size:15px; font-weight:600; letter-spacing:-.02em; }
-  .paid-body span { display:block; font-size:13px; color:var(--ink-55); letter-spacing:-.01em; }
-  .paid-amt { font-family:var(--font-mono); font-weight:600; font-size:14px; color:#6ee7b7; flex:none; }
-  .scene.is-on .paid-check { animation:pop .55s cubic-bezier(.34,1.56,.64,1) .15s both; }
-  @keyframes pop { from { transform:scale(0); } to { transform:scale(1); } }
-
-  /* progress dots */
-  .mock-foot {
-    display:flex; align-items:center; justify-content:space-between; gap:12px;
-    font-size:13px; color:var(--ink-55); margin-top:16px;
-    padding-top:14px; border-top:1px solid rgba(255,255,255,.07);
-    letter-spacing:-.01em;
-  }
-  .story-dots { display:flex; gap:7px; }
-  .sdot {
-    width:8px; height:8px; padding:0; border:0; border-radius:999px;
-    background:rgba(255,255,255,.18); cursor:pointer;
-    transition:width .3s var(--ease), background .3s var(--ease);
-  }
-  .sdot.is-on { width:26px; background:linear-gradient(90deg,#34d399,#22d3ee); }
-  .sdot:focus-visible { outline:2px solid var(--accent-2); outline-offset:3px; }
-  .mock-foot .ok { color:var(--accent-2); font-weight:600; }
-
   .mini {
     position:absolute; z-index:2;
     background:var(--surface-2);
@@ -454,20 +419,22 @@
     display:flex; align-items:center; gap:8px;
   }
   .mini svg { width:14px; height:14px; flex:none; }
-  /* sits on the eyebrow row — right side of that row is empty in every scene,
-     so it never covers invoice amounts or badge text */
-  .mini-a { top:56px; right:-30px; animation:float 5s ease-in-out infinite .8s; color:#6ee7b7; }
+  /* floating status chips — anchored to the card's bottom corners */
+  .mini-a { bottom:-16px; right:-18px; animation:float 5s ease-in-out infinite .8s; color:#6ee7b7; }
   .mini-b { bottom:-16px; left:-18px; animation:float 5.5s ease-in-out infinite .4s; color:#fcd34d; }
 
-  /* handwritten annotation — Humanto's "It's free!" pattern */
+  /* handwritten annotation — points at the email field */
+  .form-wrap { position:relative; width:min(100%,560px); margin-top:32px; }
+  .form-wrap form.signup { width:100%; margin-top:0; }
   .annotation {
-    position:absolute; right:-118px; bottom:96px; z-index:3;
+    position:absolute; right:calc(100% + 18px); top:-46px; z-index:3;
     color:var(--star); font-family:var(--font-hand);
-    font-size:1.5rem; line-height:1.05; text-align:center;
-    transform:rotate(-6deg); pointer-events:none;
-    text-shadow:0 2px 12px rgba(0,0,0,.5);
+    font-size:1.4rem; line-height:1.08; text-align:right;
+    white-space:nowrap;
+    transform:rotate(-4deg); pointer-events:none;
+    text-shadow:0 2px 12px rgba(0,0,0,.55);
   }
-  .annotation svg { display:block; margin:4px auto 0; }
+  .annotation svg { display:block; margin:4px -20px 0 auto; }
 
   /* ============================================================
      Trusted ticker — Humanto .ticker recipe (exact):
@@ -841,8 +808,8 @@
     form.signup input[type=email] { min-height:60px; }
     form.signup .btn, form.signup .btn-lg { justify-content:center; width:100%; }
     .hero-stats { gap:20px; }
-    .mini-a { right:0; }
-    .mini-b { left:0; }
+    .scene { grid-template-columns:minmax(0,1fr); min-height:0; }
+    .hp-viz { border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
     .offer { padding:56px var(--gutter) 48px; border-radius:28px; }
     .cta-band { border-radius:28px; }
     .compare th, .compare td { padding:13px 12px; font-size:13.5px; }
@@ -850,8 +817,10 @@
   @media (max-width:560px) {
     .mini, .annotation { display:none; }
     .hero-stats { flex-direction:column; gap:14px; align-items:flex-start; text-align:left; }
-    .mockup { padding:18px; }
-    .mock-foot { font-size:12.5px; }
+    .mockup { padding:16px; }
+    .mock-hint { display:none; }
+    .htabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .hp-copy { padding:20px 18px; }
     .compare th, .compare td { padding:11px 9px; font-size:12.5px; }
     .price { margin-top:28px; }
   }
@@ -859,8 +828,7 @@
     .mockup, .mini, .hero-pill .dot, .ticker.hx-run ul { animation:none !important; }
     .scene { transition:none !important; }
     .scene.sent .btn-approve, .scene.sent .btn-approve::after,
-    .scene.sent .btn-approve .lbl-a, .scene.sent .btn-approve .lbl-b,
-    .scene.is-on .paid-check { animation:none !important; }
+    .scene.sent .btn-approve .lbl-a, .scene.sent .btn-approve .lbl-b { animation:none !important; }
     .reveal { opacity:1; transform:none; transition:none; }
     html { scroll-behavior:auto; }
   }
@@ -898,13 +866,23 @@
     <p class="hero-lead">Built for lawn care, handyman, cleaning &amp; plumbing businesses. The big tools charge <b>$99/mo</b> for follow-ups. ChaseAgent does it for <b>$5</b> — and you approve every single message before it sends.</p>
 
     <!-- FORM: Formspree (free tier); JS intercepts submit to control redirect -->
-    <form class="signup" id="waitlist-form" action="https://formspree.io/f/mrppdvjq" method="POST">
-      <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email address" required>
-      <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
-      <button class="btn btn-lg" type="submit" id="waitlist">Get early access
-        <span class="btn-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-      </button>
-    </form>
+    <div class="form-wrap">
+      <form class="signup" id="waitlist-form" action="https://formspree.io/f/mrppdvjq" method="POST">
+        <input type="email" name="email" placeholder="you@yourbusiness.com" aria-label="Email address" required>
+        <input type="hidden" name="_subject" value="New ChaseAgent waitlist signup">
+        <button class="btn btn-lg" type="submit" id="waitlist">Get early access
+          <span class="btn-badge" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </button>
+      </form>
+      <!-- handwritten note — arrow points at the email field -->
+      <div class="annotation" aria-hidden="true">
+        just your email —<br>that's all we ask!
+        <svg width="118" height="54" viewBox="0 0 118 54" fill="none">
+          <path d="M14 7C42 28 70 40 104 41" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M96 33L109 41.5L96 49" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
     <p class="micro">No credit card. No spam. Leave anytime.</p>
 
     <div class="hero-stats">
@@ -914,7 +892,7 @@
     </div>
     <p class="micro">*verify these stats before launch — replace with sources you trust</p>
 
-    <!-- product story: auto-playing overdue → draft → approve → paid -->
+    <!-- product story: tabbed walkthrough — tabs → split panel (schematic · copy) -->
     <div class="hero-visual">
       <div class="mini mini-a">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -927,78 +905,113 @@
       <div class="mockup" id="story">
         <div class="mock-head">
           <span class="mock-title">How ChaseAgent works</span>
-          <span class="mock-badge">step <b id="story-step">1</b>/4</span>
+          <span class="mock-hint">auto-plays · tap a step</span>
+        </div>
+
+        <div class="htabs" role="group" aria-label="Product tour steps">
+          <button class="htab is-on" type="button" aria-pressed="true">
+            <span class="ht-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <span class="ht-txt"><span class="ht-t">Money is stuck</span><span class="ht-s">Invoice 14 days overdue</span></span>
+          </button>
+          <button class="htab" type="button" aria-pressed="false">
+            <span class="ht-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>
+            <span class="ht-txt"><span class="ht-t">Agent drafts</span><span class="ht-s">Written in your voice</span></span>
+          </button>
+          <button class="htab" type="button" aria-pressed="false">
+            <span class="ht-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8.4 12.4 11 15 16 9.6"/></svg></span>
+            <span class="ht-txt"><span class="ht-t">You approve</span><span class="ht-s">Nothing sends without you</span></span>
+          </button>
+          <button class="htab" type="button" aria-pressed="false">
+            <span class="ht-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 12h.01M18 12h.01"/></svg></span>
+            <span class="ht-txt"><span class="ht-t">You get paid</span><span class="ht-s">Then reviews, on autopilot</span></span>
+          </button>
         </div>
 
         <div class="story">
           <!-- 1 · money is stuck -->
           <div class="scene is-on">
-            <span class="scene-eyebrow"><i style="background:rgba(251,113,133,.16);color:#fda4af">1</i> Money is stuck</span>
-            <div class="invoice">
-              <div class="inv-top">
-                <span class="inv-name">Greenleaf Lawn Co.</span>
-                <span class="inv-amt">$1,240</span>
+            <div class="hp-viz">
+              <span class="hp-label">Where the money is</span>
+              <span class="hp-line">Invoice #1042 · $1,240 · 14 days overdue</span>
+              <div class="flow">
+                <span class="fbox"><b>Day 3</b>polite nudge</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox fbox-on"><b>Day 14</b>due now</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox"><b>Day 30</b>final notice</span>
               </div>
-              <div class="inv-meta">Invoice #1042 · 14 days old · <span class="overdue-tag">overdue</span></div>
             </div>
-            <p class="scene-note">Two weeks past due — you're on a job site, so chasing it slipped your mind.</p>
-            <div class="seq">Day 3 <i>✓ sent</i> · Day 14 next · Day 30 queued</div>
+            <div class="hp-copy">
+              <span class="hp-eyebrow">Money is stuck</span>
+              <h3>Overdue invoices linger.</h3>
+              <p>Two weeks past due — chasing feels awkward, so it slips. ChaseAgent watches every invoice so none goes quiet.</p>
+            </div>
           </div>
 
           <!-- 2 · the agent drafts -->
           <div class="scene">
-            <span class="scene-eyebrow"><i style="background:rgba(34,211,238,.16);color:#67e8f9">2</i> ChaseAgent drafts</span>
-            <div class="draft">
-              <div class="draft-head"><span class="draft-dot"></span> Draft ready · sends from your own email</div>
-              <p>"Hi Dana — quick nudge on invoice #1042 ($1,240), now 14 days out. Could you share an update on timing? Copy attached. Thanks! — Sam"</p>
+            <div class="hp-viz">
+              <span class="hp-label">What goes out</span>
+              <span class="hp-line">Drafted from your inbox, ready for review</span>
+              <div class="flow">
+                <span class="fbox"><b>Invoice lands</b>your email</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox fbox-on"><b>Agent drafts</b>your voice</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox"><b>You review</b>before send</span>
+              </div>
             </div>
-            <p class="scene-note">Written in your voice, on the Day 3 / 14 / 30 schedule you set.</p>
+            <div class="hp-copy">
+              <span class="hp-eyebrow">ChaseAgent drafts</span>
+              <h3>The follow-up writes itself.</h3>
+              <p>Day 3 polite, day 14 firm, day 30 final — drafted from your own inbox in your voice, ready before you'd have remembered.</p>
+            </div>
           </div>
 
           <!-- 3 · you approve -->
           <div class="scene">
-            <span class="scene-eyebrow"><i style="background:rgba(251,191,36,.16);color:#fcd34d">3</i> You approve</span>
-            <div class="approve-card">
-              <div class="approve-msg"><b>Day 14 — firm follow-up</b><span>Greenleaf Lawn Co. · invoice #1042 · $1,240</span></div>
+            <div class="hp-viz">
+              <span class="hp-label">Who hits send</span>
+              <span class="hp-line">The draft waits — you decide</span>
+              <div class="flow">
+                <span class="fbox"><b>Draft ready</b>day 14</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox fbox-on"><b>Your tap</b>one click</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox"><b>Sent</b>your email</span>
+              </div>
               <div class="approve-row">
                 <button class="btn-approve" type="button" tabindex="-1"><span class="lbl-a">Approve &amp; send</span><span class="lbl-b">Sent ✓</span></button>
                 <button class="btn-edit" type="button" tabindex="-1">Edit</button>
               </div>
             </div>
-            <p class="scene-note">One tap from your phone — <b>nothing sends without you</b>.</p>
+            <div class="hp-copy">
+              <span class="hp-eyebrow">You approve</span>
+              <h3>One tap. Full control.</h3>
+              <p>Edit it if you want, then approve — it sends from your own email. <b>Nothing ever auto-sends.</b></p>
+            </div>
           </div>
 
           <!-- 4 · paid -->
           <div class="scene">
-            <span class="scene-eyebrow"><i>4</i> You get paid</span>
-            <div class="paid">
-              <span class="paid-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-              <span class="paid-body"><b>$1,240 paid in 4 days</b><span>Greenleaf Lawn Co. · invoice #1042</span></span>
-              <span class="paid-amt">+$1,240</span>
+            <div class="hp-viz">
+              <span class="hp-label">Where it ends up</span>
+              <span class="hp-line">Chase sent · customer pays · review asked</span>
+              <div class="flow">
+                <span class="fbox"><b>Follow-up</b>delivered</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox fbox-on"><b>$1,240 paid</b>in 4 days</span>
+                <span class="farr" aria-hidden="true">→</span>
+                <span class="fbox"><b>Review</b>requested</span>
+              </div>
             </div>
-            <p class="scene-note">The follow-up did the awkward part — and you kept the customer.</p>
-            <div class="seq">In 7 days · we'll ask for that <i>⭐ review</i></div>
+            <div class="hp-copy">
+              <span class="hp-eyebrow">You get paid</span>
+              <h3>Paid — then reviewed.</h3>
+              <p>The awkward follow-up did its job. Days later, ChaseAgent asks your happy customer for the review you never remember to request.</p>
+            </div>
           </div>
         </div>
-
-        <div class="mock-foot">
-          <div class="story-dots" role="group" aria-label="Product demo steps">
-            <button class="sdot is-on" type="button" aria-label="Step 1: money is stuck" aria-pressed="true"></button>
-            <button class="sdot" type="button" aria-label="Step 2: ChaseAgent drafts the message" aria-pressed="false"></button>
-            <button class="sdot" type="button" aria-label="Step 3: you approve with one tap" aria-pressed="false"></button>
-            <button class="sdot" type="button" aria-label="Step 4: you get paid" aria-pressed="false"></button>
-          </div>
-          <span class="ok">Nothing sends without you</span>
-        </div>
-      </div>
-
-      <!-- handwritten annotation (Humanto "It's free!" pattern) -->
-      <div class="annotation" aria-hidden="true">
-        you approve<br>every send!
-        <svg width="66" height="46" viewBox="0 0 66 46" fill="none">
-          <path d="M58 6C42 3 18 12 8 34" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M8 34L22 31M8 34L12 20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
       </div>
     </div>
   </div>
@@ -1374,8 +1387,7 @@
     var mock = document.getElementById('story');
     if (!mock) return;
     var scenes = mock.querySelectorAll('.scene');
-    var dots = mock.querySelectorAll('.sdot');
-    var stepEl = document.getElementById('story-step');
+    var tabs = mock.querySelectorAll('.htab');
     var reduce = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     var idx = 0, timer = null, tapTimer = null;
 
@@ -1383,10 +1395,9 @@
       idx = (n + scenes.length) % scenes.length;
       for (var k = 0; k < scenes.length; k++) {
         scenes[k].classList.toggle('is-on', k === idx);
-        dots[k].classList.toggle('is-on', k === idx);
-        dots[k].setAttribute('aria-pressed', k === idx ? 'true' : 'false');
+        tabs[k].classList.toggle('is-on', k === idx);
+        tabs[k].setAttribute('aria-pressed', k === idx ? 'true' : 'false');
       }
-      if (stepEl) stepEl.textContent = String(idx + 1);
       // scene 3 replays the tap → "Sent ✓" each time it enters
       clearTimeout(tapTimer);
       scenes[idx].classList.remove('sent');
@@ -1400,8 +1411,8 @@
       if (reduce) return;
       timer = setInterval(function () { go(idx + 1); }, 3400);
     }
-    dots.forEach(function (d, k) {
-      d.addEventListener('click', function () { go(k); start(); });
+    tabs.forEach(function (t, k) {
+      t.addEventListener('click', function () { go(k); start(); });
     });
     mock.addEventListener('mouseenter', stop);
     mock.addEventListener('mouseleave', start);
