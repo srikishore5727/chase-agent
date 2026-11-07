@@ -201,6 +201,7 @@
     display:flex; align-items:center; gap:9px;
     text-decoration:none; color:var(--ink);
     font-weight:600; font-size:1.1rem; letter-spacing:-.02em;
+    padding:7px 0; /* ≥44px tap target */
   }
   .logo-mark {
     width:30px; height:30px; flex:none;
@@ -215,6 +216,7 @@
     color:var(--ink-70); text-decoration:none;
     font-size:var(--fs-small); font-weight:500; letter-spacing:-.01em;
     transition:color .2s var(--ease);
+    display:inline-flex; align-items:center; min-height:44px; /* tap target */
   }
   .nav-links a:hover { color:var(--ink); }
   .nav-cta { flex:none; }
@@ -808,16 +810,38 @@
     form.signup { flex-direction:column; max-width:100%; width:100%; }
     form.signup input[type=email] { min-height:60px; }
     form.signup .btn, form.signup .btn-lg { justify-content:center; width:100%; }
-    .hero-stats { gap:20px; }
+    /* keep the 3 stats in one tidy aligned row instead of a ragged 2+1 wrap */
+    .hero-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
     .scene { grid-template-columns:minmax(0,1fr); min-height:0; }
     .hp-viz { border-right:0; border-bottom:1px solid rgba(255,255,255,.08); }
     .offer { padding:56px var(--gutter) 48px; border-radius:28px; }
     .cta-band { border-radius:28px; }
     .compare th, .compare td { padding:13px 12px; font-size:13.5px; }
   }
+  /* story step tabs: 4-in-a-row gets too cramped below ~768 — go 2×2 */
+  @media (max-width:767.98px) {
+    .htabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  /* compact nav so the CTA never spills out of the pill on small phones */
+  @media (max-width:430px) {
+    .nav { padding:0 6px 0 14px; gap:10px; }
+    .nav-logo { font-size:1rem; gap:7px; }
+    .btn-sm { padding:4px 4px 4px 14px; font-size:.86rem; gap:10px; }
+    .btn-sm .btn-badge { width:34px; height:34px; }
+    .btn-sm .btn-badge svg { width:14px; height:14px; }
+    .compare th, .compare td { padding:10px 7px; font-size:12px; }
+  }
+  /* tiny phones (≤360): shrink logo further and drop the nav CTA badge */
+  @media (max-width:360px) {
+    .nav { padding:0 6px 0 10px; gap:8px; }
+    .nav-logo { font-size:.92rem; gap:6px; }
+    .logo-mark { width:26px; height:26px; }
+    .nav-cta { padding-right:14px; }
+    .nav-cta .btn-badge { display:none; }
+  }
   @media (max-width:560px) {
     .mini, .annotation { display:none; }
-    .hero-stats { flex-direction:column; gap:14px; align-items:flex-start; text-align:left; }
+    .hero-stats { display:flex; flex-direction:column; gap:14px; align-items:flex-start; text-align:left; }
     .mockup { padding:16px; }
     .mock-hint { display:none; }
     .htabs { grid-template-columns:repeat(2,minmax(0,1fr)); }
